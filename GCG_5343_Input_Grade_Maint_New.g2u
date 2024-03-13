@@ -1,0 +1,170 @@
+Program.Sub.ScreenSU.Start
+Gui.F_GradeInput..Create
+Gui.F_GradeInput..Caption("Grade Maintenance")
+Gui.F_GradeInput..Size(4830,8820)
+Gui.F_GradeInput..MinX(0)
+Gui.F_GradeInput..MinY(0)
+Gui.F_GradeInput..Position(0,0)
+Gui.F_GradeInput..BackColor(-2147483633)
+Gui.F_GradeInput..MousePointer(0)
+Gui.F_GradeInput..Event(UnLoad,F_GradeInput_UnLoad)
+Gui.F_GradeInput.frmGradeInput.Create(Frame)
+Gui.F_GradeInput.frmGradeInput.Size(4455,1155)
+Gui.F_GradeInput.frmGradeInput.Position(90,60)
+Gui.F_GradeInput.cmdSave.Create(Button)
+Gui.F_GradeInput.cmdSave.Size(855,375)
+Gui.F_GradeInput.cmdSave.Position(3540,720)
+Gui.F_GradeInput.cmdSave.Parent("frmGradeInput")
+Gui.F_GradeInput.cmdSave.Caption("Save")
+Gui.F_GradeInput.cmdSave.Event(Click,cmdSave_Click)
+Gui.F_GradeInput.txtInputGrade.Create(TextBox,"",True,1350,300,0,105,360,True,0,"Arial",8,-2147483643,1)
+Gui.F_GradeInput.txtInputGrade.Parent("frmGradeInput")
+Gui.F_GradeInput.txtInputGrade.MaxLength(50)
+Gui.F_GradeInput.cmdDelete.Create(Button)
+Gui.F_GradeInput.cmdDelete.Size(855,375)
+Gui.F_GradeInput.cmdDelete.Position(2625,720)
+Gui.F_GradeInput.cmdDelete.Parent("frmGradeInput")
+Gui.F_GradeInput.cmdDelete.Caption("Delete")
+Gui.F_GradeInput.cmdDelete.Event(Click,cmdDelete_Click)
+Gui.F_GradeInput.txtDescription.Create(TextBox,"",True,2805,300,0,1620,375,True,0,"Arial",8,-2147483643,1)
+Gui.F_GradeInput.txtDescription.Parent("frmGradeInput")
+Gui.F_GradeInput.lblGrade.Create(Label,"Grade",True,1290,195,0,90,210,True,0,"Arial",8,-2147483633,0)
+Gui.F_GradeInput.lblGrade.Parent("frmGradeInput")
+Gui.F_GradeInput.lblDescription.Create(Label,"Description",True,1290,210,0,1620,195,True,0,"Arial",8,-2147483633,0)
+Gui.F_GradeInput.lblDescription.Parent("frmGradeInput")
+Gui.F_GradeInput.GsGcg_Name.Create(GsGridControl)
+Gui.F_GradeInput.GsGcg_Name.Size(4440,6885)
+Gui.F_GradeInput.GsGcg_Name.Position(60,1275)
+Gui.F_GradeInput.GsGcg_Name.Event(RowCellClick,GsGcg_Name_RowCellClick)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+f.Intrinsic.Control.End
+f.Intrinsic.Control.CallSub(loadData)
+f.Intrinsic.Control.CallSub(gridProperties)
+f.Intrinsic.Control.CallSub(Deserialize)
+gui.F_GradeInput..Show
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_5343_Input_Grade_Maint.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.F_GradeInput_UnLoad.Start
+f.Intrinsic.Control.CallSub(Serialize)
+f.Intrinsic.Control.End
+Program.Sub.F_GradeInput_UnLoad.End
+
+Program.Sub.loadData.Start
+v.Local.sSQL.Declare
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("g_NameDT", "con", "Select * from GCG_5343_Input_Grade", true)
+		gui.F_GradeInput.GsGcg_Name.AddGridviewFromDatatable("g_NameGV", "g_NameDT")
+		gui.F_GradeInput.GsGcg_Name.MainView("g_NameGV")
+		f.Intrinsic.Control.CallSub(gridProperties)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadData.End
+
+Program.Sub.gridProperties.Start
+'HeaderFontBold
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_ID", "HeaderFontBold", True)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Name", "HeaderFontBold", True)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Description", "HeaderFontBold", True)
+
+'Visible
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_ID", "Visible", True)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Name", "Visible", True)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Description", "Visible", True)
+
+'Read Only
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_ID", "ReadOnly", True)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Name", "ReadOnly", True)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Description", "ReadOnly", True)
+
+'Allow Edit
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_ID", "AllowEdit", False)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Name", "AllowEdit", False)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Description", "AllowEdit", False)
+
+'HeaderHAlignment
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_ID", "HeaderHAlignment", Center)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Name", "HeaderHAlignment", Center)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Description", "HeaderHAlignment", Center)
+
+'CellHAlignment
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_ID", "CellHAlignment", Left)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Name", "CellHAlignment", Left)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Description", "CellHAlignment", Left)
+
+'Caption
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_ID", "Caption", "Index")
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Name", "Caption", "Input Grade")
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Description", "Caption", "Description")
+
+'MinWidth
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_ID", "MinWidth", 30)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Name", "MinWidth", 30)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Description", "MinWidth", 60)
+
+'Width
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_ID", "Width", 40)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Name", "Width", 40)
+gui.F_GradeInput.GsGcg_Name.SetColumnProperty("g_NameGV", "g_Description", "Width", 80)
+Program.Sub.gridProperties.End
+
+Program.Sub.Serialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+
+f.Intrinsic.Control.If(v.DataTable.g_NameDT.Exists, =, False)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+gui.F_RadSourcesReceipt.GsGridControl1.Serialize("g_NameGV", v.Local.sSerialize)
+f.Global.Registry.AddValue(v.Caller.User, v.Caller.CompanyCode, "g_NameGV", 5343, 1000, False, "Serialize", False, 0, -999.0, 1/1/1980, 12:00:00 AM, v.Local.sSerialize)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "g_NameGV", 5343, 0, 5, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize, <>, "")
+		f.ODBC.Connection!common.OpenCommonConnection
+			f.ODBC.Connection!common.Execute("delete from GS_REGISTRY where REG_ID = '5343'")
+		f.ODBC.Connection!common.Close
+	f.Intrinsic.Control.EndIf
+	
+	f.Global.Registry.ReadValue(v.Caller.User, v.Caller.CompanyCode, "g_NameGV", "5343", 1000, 6, "", v.Local.sSerialize)
+	f.Intrinsic.Control.If(v.Local.sSerialize.Trim, <>, "")
+		gui.F_RadSourcesReceipt.GsGridControl1.Deserialize(v.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+Program.Sub.cmdSave_Click.Start
+Program.Sub.cmdSave_Click.End
+Program.Sub.cmdDelete_Click.Start
+Program.Sub.cmdDelete_Click.End
+Program.Sub.GsGcg_Name_RowCellClick.Start
+Program.Sub.GsGcg_Name_RowCellClick.End
+
+
+
+
+
+
