@@ -1,0 +1,169 @@
+Program.Sub.ScreenSU.Start
+Gui.F_cpInfo..Create
+Gui.F_cpInfo..Caption("Clinician/Patient Info")
+Gui.F_cpInfo..Size(9075,3270)
+Gui.F_cpInfo..MinX(0)
+Gui.F_cpInfo..MinY(0)
+Gui.F_cpInfo..Position(0,0)
+Gui.F_cpInfo..BackColor(-2147483633)
+Gui.F_cpInfo..MaxButton(False)
+Gui.F_cpInfo..MinButton(False)
+Gui.F_cpInfo..MousePointer(0)
+Gui.F_cpInfo..Sizeable(False)
+Gui.F_cpInfo..Event(UnLoad,F_cpInfo_UnLoad)
+Gui.F_cpInfo.txt_cName.Create(TextBox,"",True,3600,300,0,315,435,True,0,"Arial",8,-2147483643,1)
+Gui.F_cpInfo.txt_cPhone.Create(TextBox,"",True,3600,300,0,315,1020,True,0,"Arial",8,-2147483643,1)
+Gui.F_cpInfo.txt_cEmail.Create(TextBox,"",True,3600,300,0,315,1620,True,0,"Arial",8,-2147483643,1)
+Gui.F_cpInfo.txt_pID.Create(TextBox,"",True,3600,300,0,4785,435,True,0,"Arial",8,-2147483643,1)
+Gui.F_cpInfo.txt_pName.Create(TextBox,"",True,3600,300,0,4785,1020,True,0,"Arial",8,-2147483643,1)
+Gui.F_cpInfo.ddl_inputGrade.Create(DropDownList)
+Gui.F_cpInfo.ddl_inputGrade.Size(3600,330)
+Gui.F_cpInfo.ddl_inputGrade.Position(4785,1620)
+Gui.F_cpInfo.lbl_cName.Create(Label,"Clinician Name",True,1935,255,0,330,225,True,0,"Arial",8,-2147483633,0)
+Gui.F_cpInfo.lbl_cPhone.Create(Label,"Clinician Phone",True,1935,255,0,315,825,True,0,"Arial",8,-2147483633,0)
+Gui.F_cpInfo.lbl_cEmail.Create(Label,"Clinician Email",True,1935,255,0,330,1410,True,0,"Arial",8,-2147483633,0)
+Gui.F_cpInfo.lbl_pID.Create(Label,"Patient ID",True,1935,255,0,4815,225,True,0,"Arial",8,-2147483633,0)
+Gui.F_cpInfo.lbl_pName.Create(Label,"Patient Name",True,1935,255,0,4785,825,True,0,"Arial",8,-2147483633,0)
+Gui.F_cpInfo.lbl_inputGrade.Create(Label,"Select Input Grade",True,1935,255,0,4770,1410,True,0,"Arial",8,-2147483633,0)
+Gui.F_cpInfo.cmd_Save.Create(Button)
+Gui.F_cpInfo.cmd_Save.Size(855,375)
+Gui.F_cpInfo.cmd_Save.Position(345,2220)
+Gui.F_cpInfo.cmd_Save.Caption("Save")
+Gui.F_cpInfo.cmd_Save.Event(Click,cmd_Save_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sOrderNo.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'project coded for Hanger, this will record paitent data and store it in a SQL Express database with encrypted columns.
+'coded 11/27/2018
+'coded by SFF
+'coded 02/07/2018
+'coded  by AAV
+'runs from script 3 hook on Order Entry Header
+f.Intrinsic.Control.End
+f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+	f.Intrinsic.Control.Case(11560)
+		v.Passed.000203.Set("Patient Data")
+	f.Intrinsic.Control.Case(11810)
+		f.Intrinsic.String.LPad(v.Passed.000003, "0", 7, v.Global.sOrderNo)
+		f.Intrinsic.Control.If(v.Caller.Switches, =, "O")
+			f.Intrinsic.Control.CallSub(getcpInfo)
+			gui.F_cpInfo..Show
+		f.Intrinsic.Control.ElseIf(v.Caller.Switches, =, "N")
+			gui.F_cpInfo..Show
+		f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndSelect
+'gui.F_cpInfo..Show
+Program.Sub.Main.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_5343_Patient_Data_OE.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.F_cpInfo_UnLoad.Start
+f.Intrinsic.Control.End
+Program.Sub.F_cpInfo_UnLoad.End
+
+Program.Sub.cmd_Save_Click.Start
+v.Local.sSql.Declare(string)
+v.Local.sTemp.Declare(string)
+v.Local.i.Declare(Long)
+
+f.Intrinsic.Control.Try
+'table columns for refernce:
+'***NEED INFO on table***
+'CREATE TABLE [dbo].[GCG_5343_cpInfo](
+'	[ORDER_NO] [char](7) NULL,
+'	[c_Name] [char](100) COLLATE Latin1_General_BIN2 ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = [CEK_Auto1], ENCRYPTION_TYPE = Randomized, ALGORITHM = 'AEAD_AES_256_CBC_HMAC_SHA_256') NULL,
+'	[c_Email] [char](100) COLLATE Latin1_General_BIN2 ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = [CEK_Auto1], ENCRYPTION_TYPE = Randomized, ALGORITHM = 'AEAD_AES_256_CBC_HMAC_SHA_256') NULL,
+'	[c_Phone] [char](20) COLLATE Latin1_General_BIN2 ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = [CEK_Auto1], ENCRYPTION_TYPE = Randomized, ALGORITHM = 'AEAD_AES_256_CBC_HMAC_SHA_256') NULL,
+'	[p_ID] [char](50) COLLATE Latin1_General_BIN2 ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = [CEK_Auto1], ENCRYPTION_TYPE = Randomized, ALGORITHM = 'AEAD_AES_256_CBC_HMAC_SHA_256') NULL,
+'	[p_Name] [char](100) COLLATE Latin1_General_BIN2 ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = [CEK_Auto1], ENCRYPTION_TYPE = Randomized, ALGORITHM = 'AEAD_AES_256_CBC_HMAC_SHA_256') NULL,
+'	[Input_Grade] [char](50) COLLATE Latin1_General_BIN2 ENCRYPTED WITH (COLUMN_ENCRYPTION_KEY = [CEK_Auto1], ENCRYPTION_TYPE = Randomized, ALGORITHM = 'AEAD_AES_256_CBC_HMAC_SHA_256') NULL
+') ON [PRIMARY]
+
+	'open connection to SQLServer Express DB
+	f.ODBC.Connection!conS.OpenConnection("Driver={ODBC Driver 13 for SQL Server};Server=HANGERDEV\SQLEXPRESS; Database=Hanger;Uid=gssapp;Pwd=!Jimmie48;ColumnEncryption=Enabled;")
+
+	'get existing record if returned
+	f.Intrinsic.String.Build("Select * from GCG_5343_cpInfo where Order_No = '{0}' ",v.Global.sOrderNo,v.Local.sSql)
+	f.Data.DataTable.CreateFromSQL("cpInfo","conS",v.Local.sSql)	
+
+	'check for records first.
+	f.Intrinsic.Control.If(v.DataTable.cpInfo.RowCount--,=,-1)
+		'if records do NOT exist, then add row
+		f.Data.DataTable.AddRow("cpInfo","Order_No",v.Global.sOrderNo,"c_Name",v.Screen.F_cpInfo!txt_cName.Text,"c_Email",v.Screen.F_cpInfo!txt_cEmail.Text,"c_Phone",v.Screen.F_cpInfo!txt_cPhone.Text,"p_ID",v.Screen.F_cpInfo!txt_pID.Text,"p_Name",v.Screen.F_cpInfo!txt_pName.Text,"Input_Grade",v.Screen.F_cpInfo!ddl_inputGrade.Text)
+
+	f.Intrinsic.Control.Else
+		'else update row of data with data from te
+		f.Data.DataTable.SetValue("cpInfo",0,"Order_No",v.Global.sOrderNo,"c_Name",v.Screen.F_cpInfo!txt_cName.Text,"c_Email",v.Screen.F_cpInfo!txt_cEmail.Text,"c_Phone",v.Screen.F_cpInfo!txt_cPhone.Text,"p_ID",v.Screen.F_cpInfo!txt_pID.Text,"p_Name",v.Screen.F_cpInfo!txt_pName.Text,"Input_Grade",v.Screen.F_cpInfo!ddl_inputGrade.Text)
+	f.Intrinsic.Control.EndIf
+
+	'save to db, use default mode
+	f.Data.DataTable.SaveToDB("cpInfo","conS","GCG_5343_cpInfo", "Order_No",256)
+
+	'accept changes to datatable after save
+	f.Data.DataTable.Close("cpInfo")
+
+	'close connection
+	f.ODBC.Connection!conS.Close
+	f.Intrinsic.Control.CallSub(f_cpinfo_unload)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmd_Save_Click.End
+
+Program.Sub.getcpInfo.Start
+v.Local.iRet.Declare
+v.Local.sSql.Declare
+
+f.Intrinsic.Control.Try
+	'open connection to SQLServer Express DB
+	f.ODBC.Connection!conS.OpenConnection("Driver={ODBC Driver 13 for SQL Server};Server=HANGERDEV\SQLEXPRESS; Database=Hanger;Uid=gssapp;Pwd=!Jimmie48;ColumnEncryption=Enabled;")
+	
+	'get existing record if returned
+	f.Intrinsic.String.Build("Select * from GCG_5343_cpInfo where Order_No = '{0}' ",v.Global.sOrderNo,v.Local.sSql)
+	f.Data.DataTable.CreateFromSQL("cpInfo","conS",v.Local.sSql)	
+	
+	f.Intrinsic.Control.If(v.DataTable.cpInfo.RowCount, =, 1)
+		gui.F_cpInfo.txt_cName.Text(v.DataTable.cpInfo(0).c_Name!FieldValTrim)
+		gui.F_cpInfo.txt_cEmail.Text(v.DataTable.cpInfo(0).c_Email!FieldValTrim)
+		gui.F_cpInfo.txt_cPhone.Text(v.DataTable.cpInfo(0).c_Phone!FieldValTrim)
+		gui.F_cpInfo.txt_pID.Text(v.DataTable.cpInfo(0).p_ID!FieldValTrim)
+		gui.F_cpInfo.txt_pName.Text(v.DataTable.cpInfo(0).p_Name!FieldValTrim)
+		gui.F_cpInfo.ddl_inputGrade.FindItem(v.DataTable.cpInfo(0).Input_Grade!FieldValTrim, true, v.Local.iRet)
+		gui.F_cpInfo.ddl_inputGrade.ListIndex(v.Local.iRet)
+	f.Intrinsic.Control.EndIf
+	
+	'accept changes to datatable after save
+	f.Data.DataTable.Close("cpInfo")
+	
+	'close connection
+	f.ODBC.Connection!conS.Close
+	'f.Intrinsic.Control.CallSub(f_cpinfo_unload)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.getcpInfo.End
+
+Program.Sub.loadInputGrade.Start
+v.Local.iCnt.Declare
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection
+		f.Data.DataTable.CreateFromSQL("inputGradeDT", "con", "select * from GCG_5343_Input_Grade")
+		gui.F_cpInfo.ddl_inputGrade.AddItem("", 0)
+	f.ODBC.Connection!con.Close
+	
+	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.inputGradeDT.RowCount--, 1)
+		gui.F_cpInfo.ddl_inputGrade.AddItem(v.DataTable.inputGradeDT(v.Local.iCnt).g_Name!FieldValTrim)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadInputGrade.End
