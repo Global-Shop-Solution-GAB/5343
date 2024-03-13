@@ -1,0 +1,2660 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_JobHistory..Create(BaseForm)
+Gui.F_JobHistory..Caption("Sales Order and Job History Dashboard")
+Gui.F_JobHistory..Size(19785,13275)
+Gui.F_JobHistory..MinX(0)
+Gui.F_JobHistory..MinY(0)
+Gui.F_JobHistory..Position(0,0)
+Gui.F_JobHistory..BackColor(-2147483633)
+Gui.F_JobHistory..MousePointer(0)
+Gui.F_JobHistory..Event(UnLoad,F_JobHistory_UnLoad)
+Gui.F_JobHistory..AlwaysOnTop(False)
+Gui.F_JobHistory..FontName("Tahoma")
+Gui.F_JobHistory..FontSize(8.25)
+Gui.F_JobHistory..ControlBox(True)
+Gui.F_JobHistory..MaxButton(True)
+Gui.F_JobHistory..MinButton(True)
+Gui.F_JobHistory..Moveable(True)
+Gui.F_JobHistory..Sizeable(True)
+Gui.F_JobHistory..ShowInTaskBar(True)
+Gui.F_JobHistory..TitleBar(True)
+Gui.F_JobHistory.TabOpenOrders.Create(Tab)
+Gui.F_JobHistory.TabOpenOrders.Size(19305,10260)
+Gui.F_JobHistory.TabOpenOrders.Position(90,1470)
+Gui.F_JobHistory.TabOpenOrders.Anchor(15)
+Gui.F_JobHistory.TabOpenOrders.DefaultValue("")
+Gui.F_JobHistory.TabOpenOrders.Event(Click,TabOpenOrders_Click)
+Gui.F_JobHistory.TabOpenOrders.Enabled(True)
+Gui.F_JobHistory.TabOpenOrders.Visible(True)
+Gui.F_JobHistory.TabOpenOrders.Zorder(0)
+Gui.F_JobHistory.TabOpenOrders.FontName("Tahoma")
+Gui.F_JobHistory.TabOpenOrders.FontSize(8.25)
+Gui.F_JobHistory.TabOpenOrders.Tabs(3)
+Gui.F_JobHistory.TabOpenOrders.SetTab(0)
+Gui.F_JobHistory.TabOpenOrders.Caption("All Orders")
+Gui.F_JobHistory.TabOpenOrders.SetTab(1)
+Gui.F_JobHistory.TabOpenOrders.Caption("Open Orders")
+Gui.F_JobHistory.TabOpenOrders.SetTab(2)
+Gui.F_JobHistory.TabOpenOrders.Caption("Closed Orders")
+Gui.F_JobHistory.GsGcClosedOrder.Create(GsGridControl)
+Gui.F_JobHistory.GsGcClosedOrder.Size(19170,9675)
+Gui.F_JobHistory.GsGcClosedOrder.Position(15,60)
+Gui.F_JobHistory.GsGcClosedOrder.Parent("TabOpenOrders",2)
+Gui.F_JobHistory.GsGcClosedOrder.Anchor(15)
+Gui.F_JobHistory.GsGcClosedOrder.Event(RowCellClick,CustomRowClick)
+Gui.F_JobHistory.GsGcClosedOrder.Enabled(True)
+Gui.F_JobHistory.GsGcClosedOrder.Visible(True)
+Gui.F_JobHistory.GsGcClosedOrder.Zorder(0)
+Gui.F_JobHistory.GsGcOpenOrder.Create(GsGridControl)
+Gui.F_JobHistory.GsGcOpenOrder.Size(18990,9600)
+Gui.F_JobHistory.GsGcOpenOrder.Position(90,135)
+Gui.F_JobHistory.GsGcOpenOrder.Parent("TabOpenOrders",1)
+Gui.F_JobHistory.GsGcOpenOrder.Anchor(15)
+Gui.F_JobHistory.GsGcOpenOrder.Event(RowCellClick,CustomRowClick)
+Gui.F_JobHistory.GsGcOpenOrder.Enabled(True)
+Gui.F_JobHistory.GsGcOpenOrder.Visible(True)
+Gui.F_JobHistory.GsGcOpenOrder.Zorder(0)
+Gui.F_JobHistory.GsGcAllOrder.Create(GsGridControl)
+Gui.F_JobHistory.GsGcAllOrder.Size(19050,9405)
+Gui.F_JobHistory.GsGcAllOrder.Position(75,60)
+Gui.F_JobHistory.GsGcAllOrder.Parent("TabOpenOrders",0)
+Gui.F_JobHistory.GsGcAllOrder.Anchor(15)
+Gui.F_JobHistory.GsGcAllOrder.Event(RowCellClick,CustomRowClick)
+Gui.F_JobHistory.GsGcAllOrder.Enabled(True)
+Gui.F_JobHistory.GsGcAllOrder.Visible(True)
+Gui.F_JobHistory.GsGcAllOrder.Zorder(0)
+Gui.F_JobHistory.picLogo.Create(PictureBox)
+Gui.F_JobHistory.picLogo.Size(5025,1200)
+Gui.F_JobHistory.picLogo.Position(8025,90)
+Gui.F_JobHistory.picLogo.Anchor(1)
+Gui.F_JobHistory.picLogo.Event(DblClick,picLogo_DblClick)
+Gui.F_JobHistory.picLogo.Enabled(True)
+Gui.F_JobHistory.picLogo.Visible(True)
+Gui.F_JobHistory.picLogo.Zorder(0)
+Gui.F_JobHistory.frmFilterOptions.Create(Frame)
+Gui.F_JobHistory.frmFilterOptions.Size(7305,1440)
+Gui.F_JobHistory.frmFilterOptions.Position(30,0)
+Gui.F_JobHistory.frmFilterOptions.Caption("Filter Options")
+Gui.F_JobHistory.frmFilterOptions.Enabled(False)
+Gui.F_JobHistory.frmFilterOptions.Visible(False)
+Gui.F_JobHistory.frmFilterOptions.Zorder(0)
+Gui.F_JobHistory.frmFilterOptions.FontName("Tahoma")
+Gui.F_JobHistory.frmFilterOptions.FontSize(8.25)
+Gui.F_JobHistory.lblStartDate.Create(Label,"Start Date",True,1290,180,0,75,870,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lblStartDate.Parent("frmFilterOptions")
+Gui.F_JobHistory.lblStartDate.BorderStyle(0)
+Gui.F_JobHistory.lblEndDate.Create(Label,"End Date",True,1080,180,0,2190,870,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lblEndDate.Parent("frmFilterOptions")
+Gui.F_JobHistory.lblEndDate.BorderStyle(0)
+Gui.F_JobHistory.dtpEndDate.Create(DatePicker)
+Gui.F_JobHistory.dtpEndDate.Size(1935,285)
+Gui.F_JobHistory.dtpEndDate.Position(2175,1065)
+Gui.F_JobHistory.dtpEndDate.Parent("frmFilterOptions")
+Gui.F_JobHistory.dtpEndDate.Enabled(True)
+Gui.F_JobHistory.dtpEndDate.Visible(True)
+Gui.F_JobHistory.dtpEndDate.Zorder(0)
+Gui.F_JobHistory.dtpEndDate.CheckBox(False)
+Gui.F_JobHistory.dtpEndDate.FontName("Tahoma")
+Gui.F_JobHistory.dtpEndDate.FontSize(8.25)
+Gui.F_JobHistory.dtpStartDate.Create(DatePicker)
+Gui.F_JobHistory.dtpStartDate.Size(1935,285)
+Gui.F_JobHistory.dtpStartDate.Position(60,1065)
+Gui.F_JobHistory.dtpStartDate.Parent("frmFilterOptions")
+Gui.F_JobHistory.dtpStartDate.Enabled(True)
+Gui.F_JobHistory.dtpStartDate.Visible(True)
+Gui.F_JobHistory.dtpStartDate.Zorder(0)
+Gui.F_JobHistory.dtpStartDate.CheckBox(False)
+Gui.F_JobHistory.dtpStartDate.FontName("Tahoma")
+Gui.F_JobHistory.dtpStartDate.FontSize(8.25)
+Gui.F_JobHistory.cmdFilter.Create(Button)
+Gui.F_JobHistory.cmdFilter.Size(1155,375)
+Gui.F_JobHistory.cmdFilter.Position(6000,930)
+Gui.F_JobHistory.cmdFilter.Parent("frmFilterOptions")
+Gui.F_JobHistory.cmdFilter.Caption("Filter")
+Gui.F_JobHistory.cmdFilter.DefaultValue("")
+Gui.F_JobHistory.cmdFilter.Event(Click,cmdFilter_Click)
+Gui.F_JobHistory.cmdFilter.Enabled(True)
+Gui.F_JobHistory.cmdFilter.Visible(True)
+Gui.F_JobHistory.cmdFilter.Zorder(0)
+Gui.F_JobHistory.cmdFilter.FontName("Tahoma")
+Gui.F_JobHistory.cmdFilter.FontSize(8.25)
+Gui.F_JobHistory.optDateOrder.Create(Option)
+Gui.F_JobHistory.optDateOrder.Size(1185,255)
+Gui.F_JobHistory.optDateOrder.Position(90,525)
+Gui.F_JobHistory.optDateOrder.Parent("frmFilterOptions")
+Gui.F_JobHistory.optDateOrder.Caption("Order Date")
+Gui.F_JobHistory.optDateOrder.Event(Click,optDateOrder_Click)
+Gui.F_JobHistory.optDateOrder.Enabled(True)
+Gui.F_JobHistory.optDateOrder.Visible(True)
+Gui.F_JobHistory.optDateOrder.Zorder(0)
+Gui.F_JobHistory.optDateOrder.FontName("Tahoma")
+Gui.F_JobHistory.optDateOrder.FontSize(8.25)
+Gui.F_JobHistory.optDateStarted.Create(Option)
+Gui.F_JobHistory.optDateStarted.Size(1290,255)
+Gui.F_JobHistory.optDateStarted.Position(1320,525)
+Gui.F_JobHistory.optDateStarted.Parent("frmFilterOptions")
+Gui.F_JobHistory.optDateStarted.Caption("Start Date")
+Gui.F_JobHistory.optDateStarted.Event(Click,optDateStarted_Click)
+Gui.F_JobHistory.optDateStarted.Enabled(False)
+Gui.F_JobHistory.optDateStarted.Visible(False)
+Gui.F_JobHistory.optDateStarted.Zorder(0)
+Gui.F_JobHistory.optDateStarted.FontName("Tahoma")
+Gui.F_JobHistory.optDateStarted.FontSize(8.25)
+Gui.F_JobHistory.optDateDue.Create(Option)
+Gui.F_JobHistory.optDateDue.Size(1110,255)
+Gui.F_JobHistory.optDateDue.Position(2670,525)
+Gui.F_JobHistory.optDateDue.Parent("frmFilterOptions")
+Gui.F_JobHistory.optDateDue.Caption("S.O. Due Date")
+Gui.F_JobHistory.optDateDue.Event(Click,optDateDue_Click)
+Gui.F_JobHistory.optDateDue.Enabled(False)
+Gui.F_JobHistory.optDateDue.Visible(False)
+Gui.F_JobHistory.optDateDue.Zorder(0)
+Gui.F_JobHistory.optDateDue.FontName("Tahoma")
+Gui.F_JobHistory.optDateDue.FontSize(8.25)
+Gui.F_JobHistory.optDateShip.Create(Option)
+Gui.F_JobHistory.optDateShip.Size(1095,255)
+Gui.F_JobHistory.optDateShip.Position(1320,540)
+Gui.F_JobHistory.optDateShip.Parent("frmFilterOptions")
+Gui.F_JobHistory.optDateShip.Caption("Ship Date")
+Gui.F_JobHistory.optDateShip.Event(Click,optDateShip_Click)
+Gui.F_JobHistory.optDateShip.Enabled(True)
+Gui.F_JobHistory.optDateShip.Visible(True)
+Gui.F_JobHistory.optDateShip.Zorder(0)
+Gui.F_JobHistory.optDateShip.FontName("Tahoma")
+Gui.F_JobHistory.optDateShip.FontSize(8.25)
+Gui.F_JobHistory.cboCustomer.Create(ComboBox)
+Gui.F_JobHistory.cboCustomer.Size(3120,330)
+Gui.F_JobHistory.cboCustomer.Position(1290,150)
+Gui.F_JobHistory.cboCustomer.Parent("frmFilterOptions")
+Gui.F_JobHistory.cboCustomer.Text("All Customers")
+Gui.F_JobHistory.cboCustomer.Enabled(True)
+Gui.F_JobHistory.cboCustomer.Visible(True)
+Gui.F_JobHistory.cboCustomer.Zorder(0)
+Gui.F_JobHistory.cboCustomer.FontName("Tahoma")
+Gui.F_JobHistory.cboCustomer.FontSize(8.25)
+Gui.F_JobHistory.lblCustomer.Create(Label,"Customers:",True,1125,255,0,135,270,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lblCustomer.Parent("frmFilterOptions")
+Gui.F_JobHistory.lblCustomer.BorderStyle(0)
+Gui.F_JobHistory.optDateWODue.Create(Option)
+Gui.F_JobHistory.optDateWODue.Size(1515,255)
+Gui.F_JobHistory.optDateWODue.Position(3795,525)
+Gui.F_JobHistory.optDateWODue.Parent("frmFilterOptions")
+Gui.F_JobHistory.optDateWODue.Caption("W.O. Due Date ")
+Gui.F_JobHistory.optDateWODue.Event(Click,optDateWODue_Click)
+Gui.F_JobHistory.optDateWODue.Enabled(False)
+Gui.F_JobHistory.optDateWODue.Visible(False)
+Gui.F_JobHistory.optDateWODue.Zorder(0)
+Gui.F_JobHistory.optDateWODue.FontName("Tahoma")
+Gui.F_JobHistory.optDateWODue.FontSize(8.25)
+Gui.F_JobHistory.cmdRefresh.Create(Button)
+Gui.F_JobHistory.cmdRefresh.Size(855,345)
+Gui.F_JobHistory.cmdRefresh.Position(4545,150)
+Gui.F_JobHistory.cmdRefresh.Parent("frmFilterOptions")
+Gui.F_JobHistory.cmdRefresh.Caption("Refresh")
+Gui.F_JobHistory.cmdRefresh.Event(Click,refresh)
+Gui.F_JobHistory.cmdRefresh.Enabled(True)
+Gui.F_JobHistory.cmdRefresh.Visible(True)
+Gui.F_JobHistory.cmdRefresh.Zorder(0)
+Gui.F_JobHistory.cmdRefresh.FontName("Tahoma")
+Gui.F_JobHistory.cmdRefresh.FontSize(8.25)
+Gui.F_JobHistory.lbl7.Create(Label,"Loads by Order Date.",True,1710,255,0,5460,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lbl7.Parent("frmFilterOptions")
+Gui.F_JobHistory.lbl7.BorderStyle(0)
+Gui.F_JobHistory.frmViewEdit.Create(Frame)
+Gui.F_JobHistory.frmViewEdit.Size(3525,540)
+Gui.F_JobHistory.frmViewEdit.Position(13995,30)
+Gui.F_JobHistory.frmViewEdit.Anchor(9)
+Gui.F_JobHistory.frmViewEdit.Enabled(True)
+Gui.F_JobHistory.frmViewEdit.Visible(True)
+Gui.F_JobHistory.frmViewEdit.Zorder(0)
+Gui.F_JobHistory.frmViewEdit.Caption("")
+Gui.F_JobHistory.frmViewEdit.FontName("Tahoma")
+Gui.F_JobHistory.frmViewEdit.FontSize(8.25)
+Gui.F_JobHistory.optWip.Create(Option)
+Gui.F_JobHistory.optWip.Size(1095,255)
+Gui.F_JobHistory.optWip.Position(2400,165)
+Gui.F_JobHistory.optWip.Parent("frmViewEdit")
+Gui.F_JobHistory.optWip.Caption("WIP to FG")
+Gui.F_JobHistory.optWip.Enabled(True)
+Gui.F_JobHistory.optWip.Visible(True)
+Gui.F_JobHistory.optWip.Zorder(0)
+Gui.F_JobHistory.optWip.FontName("Tahoma")
+Gui.F_JobHistory.optWip.FontSize(8.25)
+Gui.F_JobHistory.optView.Create(Option)
+Gui.F_JobHistory.optView.Size(765,255)
+Gui.F_JobHistory.optView.Position(45,165)
+Gui.F_JobHistory.optView.Parent("frmViewEdit")
+Gui.F_JobHistory.optView.Caption("View")
+Gui.F_JobHistory.optView.Event(Click,optView_Click)
+Gui.F_JobHistory.optView.Enabled(True)
+Gui.F_JobHistory.optView.Visible(True)
+Gui.F_JobHistory.optView.Zorder(0)
+Gui.F_JobHistory.optView.FontName("Tahoma")
+Gui.F_JobHistory.optView.FontSize(8.25)
+Gui.F_JobHistory.optEdit.Create(Option)
+Gui.F_JobHistory.optEdit.Size(660,255)
+Gui.F_JobHistory.optEdit.Position(840,165)
+Gui.F_JobHistory.optEdit.Parent("frmViewEdit")
+Gui.F_JobHistory.optEdit.Caption("Edit")
+Gui.F_JobHistory.optEdit.Event(Click,optEdit_Click)
+Gui.F_JobHistory.optEdit.Enabled(True)
+Gui.F_JobHistory.optEdit.Visible(True)
+Gui.F_JobHistory.optEdit.Zorder(0)
+Gui.F_JobHistory.optEdit.FontName("Tahoma")
+Gui.F_JobHistory.optEdit.FontSize(8.25)
+Gui.F_JobHistory.optIssue.Create(Option)
+Gui.F_JobHistory.optIssue.Size(765,255)
+Gui.F_JobHistory.optIssue.Position(1545,165)
+Gui.F_JobHistory.optIssue.Parent("frmViewEdit")
+Gui.F_JobHistory.optIssue.Caption("Issue")
+Gui.F_JobHistory.optIssue.Enabled(True)
+Gui.F_JobHistory.optIssue.Visible(True)
+Gui.F_JobHistory.optIssue.Zorder(0)
+Gui.F_JobHistory.optIssue.FontName("Tahoma")
+Gui.F_JobHistory.optIssue.FontSize(8.25)
+Gui.F_JobHistory.chkShowFormat.Create(CheckBox)
+Gui.F_JobHistory.chkShowFormat.Size(1650,300)
+Gui.F_JobHistory.chkShowFormat.Position(15675,810)
+Gui.F_JobHistory.chkShowFormat.Caption("Show Color Formatting")
+Gui.F_JobHistory.chkShowFormat.Anchor(9)
+Gui.F_JobHistory.chkShowFormat.Event(Click,chkShowFormat_Click)
+Gui.F_JobHistory.chkShowFormat.Enabled(False)
+Gui.F_JobHistory.chkShowFormat.Visible(True)
+Gui.F_JobHistory.chkShowFormat.Zorder(0)
+Gui.F_JobHistory.chkShowFormat.FontName("Tahoma")
+Gui.F_JobHistory.chkShowFormat.FontSize(8.25)
+Gui.F_JobHistory.txt1.Create(TextBox,"0 - No Issues",True,1815,300,0,17670,0,True,0,"Arial",8,65280,1)
+Gui.F_JobHistory.txt1.Locked(True)
+Gui.F_JobHistory.txt1.Anchor(9)
+Gui.F_JobHistory.txt2.Create(TextBox,"1 - NO WO",True,1815,300,0,17670,300,True,0,"Arial",8,16777215,1)
+Gui.F_JobHistory.txt2.Anchor(9)
+Gui.F_JobHistory.txt3.Create(TextBox,"2 - Part Missmatch",True,1815,300,0,17670,600,True,0,"Arial",8,14745599,1)
+Gui.F_JobHistory.txt3.Anchor(9)
+Gui.F_JobHistory.txt4.Create(TextBox,"3 - Date Missmatch",True,1815,300,0,17670,900,True,0,"Arial",8,14524637,1)
+Gui.F_JobHistory.txt4.Anchor(9)
+Gui.F_JobHistory.txt5.Create(TextBox,"4 - Qty Missmatch",True,1815,300,0,17670,1200,True,0,"Arial",8,12695295,1)
+Gui.F_JobHistory.txt5.Anchor(9)
+Gui.F_JobHistory.txt6.Create(TextBox,"Multiple Issues",True,1815,300,0,17670,1500,True,2,"Arial",8,255,1)
+Gui.F_JobHistory.txt6.Anchor(9)
+Gui.F_JobHistory.frmAverage.Create(Frame)
+Gui.F_JobHistory.frmAverage.Size(3930,885)
+Gui.F_JobHistory.frmAverage.Position(11490,11715)
+Gui.F_JobHistory.frmAverage.Caption("Averages")
+Gui.F_JobHistory.frmAverage.Anchor(10)
+Gui.F_JobHistory.frmAverage.Enabled(True)
+Gui.F_JobHistory.frmAverage.Visible(True)
+Gui.F_JobHistory.frmAverage.Zorder(0)
+Gui.F_JobHistory.frmAverage.FontName("Tahoma")
+Gui.F_JobHistory.frmAverage.FontSize(8.25)
+Gui.F_JobHistory.lbl3.Create(Label,"Days Late",True,885,255,0,2790,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lbl3.Parent("frmAverage")
+Gui.F_JobHistory.lbl3.BorderStyle(0)
+Gui.F_JobHistory.txtAvgTurnaround.Create(TextBox,"",True,1215,300,0,45,495,True,2,"Arial",8,-2147483643,1)
+Gui.F_JobHistory.txtAvgTurnaround.Parent("frmAverage")
+Gui.F_JobHistory.txtAvgTurnaround.Locked(True)
+Gui.F_JobHistory.txtAvgIddleDays.Create(TextBox,"",True,1215,300,0,1335,495,True,2,"Arial",8,-2147483643,1)
+Gui.F_JobHistory.txtAvgIddleDays.Parent("frmAverage")
+Gui.F_JobHistory.txtAvgDaysLate.Create(TextBox,"",True,1215,300,0,2625,495,True,2,"Arial",8,-2147483643,1)
+Gui.F_JobHistory.txtAvgDaysLate.Parent("frmAverage")
+Gui.F_JobHistory.lbl1.Create(Label,"Turnaround",True,1005,255,0,165,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lbl1.Parent("frmAverage")
+Gui.F_JobHistory.lbl1.BorderStyle(0)
+Gui.F_JobHistory.lbl2.Create(Label,"Idle Days",True,885,255,0,1500,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lbl2.Parent("frmAverage")
+Gui.F_JobHistory.lbl2.BorderStyle(0)
+Gui.F_JobHistory.frmTotals.Create(Frame)
+Gui.F_JobHistory.frmTotals.Size(3930,885)
+Gui.F_JobHistory.frmTotals.Position(15495,11715)
+Gui.F_JobHistory.frmTotals.Caption("Totals")
+Gui.F_JobHistory.frmTotals.Anchor(10)
+Gui.F_JobHistory.frmTotals.Enabled(True)
+Gui.F_JobHistory.frmTotals.Visible(True)
+Gui.F_JobHistory.frmTotals.Zorder(0)
+Gui.F_JobHistory.frmTotals.FontName("Tahoma")
+Gui.F_JobHistory.frmTotals.FontSize(8.25)
+Gui.F_JobHistory.lbl4.Create(Label,"Price",True,540,255,0,375,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lbl4.Parent("frmTotals")
+Gui.F_JobHistory.lbl4.BorderStyle(0)
+Gui.F_JobHistory.txtTotalPrice.Create(TextBox,"",True,1215,300,0,45,495,True,1,"Arial",8,-2147483643,1)
+Gui.F_JobHistory.txtTotalPrice.Parent("frmTotals")
+Gui.F_JobHistory.txtTotalFreight.Create(TextBox,"",True,1215,300,0,1335,495,True,1,"Arial",8,-2147483643,1)
+Gui.F_JobHistory.txtTotalFreight.Parent("frmTotals")
+Gui.F_JobHistory.txtTotal.Create(TextBox,"",True,1215,300,0,2610,495,True,1,"Arial",8,-2147483643,1)
+Gui.F_JobHistory.txtTotal.Parent("frmTotals")
+Gui.F_JobHistory.lbl5.Create(Label,"Freight",True,660,255,0,1620,240,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lbl5.Parent("frmTotals")
+Gui.F_JobHistory.lbl5.BorderStyle(0)
+Gui.F_JobHistory.lbl6.Create(Label,"Total",True,495,255,0,2940,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lbl6.Parent("frmTotals")
+Gui.F_JobHistory.lbl6.BorderStyle(0)
+Gui.F_JobHistory.cmdCalc.Create(Button)
+Gui.F_JobHistory.cmdCalc.Size(1275,375)
+Gui.F_JobHistory.cmdCalc.Position(14100,915)
+Gui.F_JobHistory.cmdCalc.Caption("Calculate")
+Gui.F_JobHistory.cmdCalc.Event(Click,cmdCalc_Click)
+Gui.F_JobHistory.cmdCalc.Anchor(9)
+Gui.F_JobHistory.cmdCalc.Enabled(True)
+Gui.F_JobHistory.cmdCalc.Visible(True)
+Gui.F_JobHistory.cmdCalc.Zorder(0)
+Gui.F_JobHistory.cmdCalc.FontName("Tahoma")
+Gui.F_JobHistory.cmdCalc.FontSize(8.25)
+Gui.F_JobHistory.frmProgressBar.Create(Frame)
+Gui.F_JobHistory.frmProgressBar.Size(6630,1440)
+Gui.F_JobHistory.frmProgressBar.Position(90,15)
+Gui.F_JobHistory.frmProgressBar.Enabled(True)
+Gui.F_JobHistory.frmProgressBar.Visible(True)
+Gui.F_JobHistory.frmProgressBar.Zorder(0)
+Gui.F_JobHistory.frmProgressBar.Caption("")
+Gui.F_JobHistory.frmProgressBar.FontName("Tahoma")
+Gui.F_JobHistory.frmProgressBar.FontSize(8.25)
+Gui.F_JobHistory.progressBar1.Create(ProgressBar)
+Gui.F_JobHistory.progressBar1.Size(6360,720)
+Gui.F_JobHistory.progressBar1.Position(150,570)
+Gui.F_JobHistory.progressBar1.Parent("frmProgressBar")
+Gui.F_JobHistory.progressBar1.Visible(True)
+Gui.F_JobHistory.lblProgressBar.Create(Label,"Loading Work Orders:",True,1935,255,0,180,255,True,0,"Arial",8,-2147483633,0)
+Gui.F_JobHistory.lblProgressBar.Parent("frmProgressBar")
+Gui.F_JobHistory.lblProgressBar.BorderStyle(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+'not used yet
+'v.Global.bEncryptedSQL.Declare(boolean, false)
+'Will be used for date filter.
+v.Global.sDateFieldTitle.Declare
+'used just for formatting.
+'Program.External.Include.Library("GRIDFORMATTING.lib")
+v.Global.bLoadData.Declare
+v.Global.dStartDate.Declare
+v.Global.dEndDate.Declare
+v.Global.bNotEmpty.Declare
+Program.Sub.Preflight.End
+Program.Sub.Main.Start
+
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.CallSub(checkCustomFolder)
+	f.Intrinsic.Control.CallSub(loadScreenDefaults)
+	f.Intrinsic.Control.CallSub(CreateEmptyDTs)
+	gui.F_JobHistory.TabOpenOrders.SetTab(0)
+	f.Intrinsic.Control.CallSub(createGridViews)
+	f.Intrinsic.Control.CallSub(SetContextMenus)
+	f.Intrinsic.Control.CallSub(CheckPermissions)
+	f.Intrinsic.Control.CallSub(Deserialize)
+
+	gui.F_JobHistory..Show	
+	gui.F_JobHistory.frmProgressBar.Enabled(True)
+	gui.F_JobHistory.frmProgressBar.Visible(True)
+	gui.F_JobHistory.frmFilterOptions.Enabled(False)
+	gui.F_JobHistory.frmFilterOptions.Visible(False)
+	gui.F_JobHistory.TabOpenOrders.Visible(False)
+	gui.F_JobHistory.progressBar1.Value(10)
+	gui.F_JobHistory.lblProgressBar.Caption("Loading Sales Orders Data:")
+	
+	f.Intrinsic.Control.CallSub(createOrderLines)
+	
+	f.Intrinsic.Control.If(v.Global.bNotEmpty)
+		gui.F_JobHistory.progressBar1.Value(40)
+		gui.F_JobHistory.lblProgressBar.Caption("Loading Work Orders Data:")
+		f.Intrinsic.Control.CallSub(createWorkOderSuffix)
+		gui.F_JobHistory.progressBar1.Value(70)
+		gui.F_JobHistory.lblProgressBar.Caption("Loading Shipping Data:")
+		f.Intrinsic.Control.CallSub(addShipmentInfo)
+		gui.F_JobHistory.progressBar1.Value(80)
+		gui.F_JobHistory.lblProgressBar.Caption("Loading Patient's Data:")
+		
+		f.Intrinsic.Control.CallSub(createDictionaries)
+		gui.F_JobHistory.progressBar1.Value(90)
+		gui.F_JobHistory.lblProgressBar.Caption("Getting Current and Next Steps:")
+		f.Intrinsic.Control.CallSub(getSequences)
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_JobHistory.progressBar1.Value(100)
+	gui.F_JobHistory.TabOpenOrders.Visible(True)
+	gui.F_JobHistory.frmProgressBar.Enabled(False)
+	gui.F_JobHistory.frmProgressBar.Visible(False)
+	gui.F_JobHistory.frmFilterOptions.Enabled(True)
+	gui.F_JobHistory.frmFilterOptions.Visible(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+Program.Sub.CreateEmptyDTs.Start
+f.Intrinsic.Control.Try
+	f.Data.DataTable.Create("openOrderdLinesDT", true)
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "CUSTOMER", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "BILLED_TO", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "SHIPPED_TO", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "CLINICIAN", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "CLINICIAN_EMAIL", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "ORDER_NO", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "RECORD_NO", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "CUSTOMER_PO", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "WORKORDERSUFFIX", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "INPUTGRADE", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "PATIENTNAME", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "PART", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "DESCRIPTION", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "PRODUCT_LINE", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "DATE_ORDER", "Date")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "DATE_SEQUENCE", "Date")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "DATE_DUE", "Date")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "WORKORDERDUEDATE", "Date")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "woOHold", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "WORKORDERQTY", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "DATE_SHIP", "Date")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "TURNAROUND", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "IDLE_DAYS", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "DAYS_LATE", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "CURRENTJOBSEQ", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "NEXTJOBSEQ", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "QTY_ORDERED", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "UNIT_PRICE", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "PRICEFREIGHT", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "TYPEORDER", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "TYPEORDER2", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "PRICE", "Float")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "EXTENSION", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "TRACKING_NO", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "WO_PART", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "JOB", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "SUFFIX", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "QTYCHECK", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "DATECHECK", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "PARTCHECK", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "MULTIPLEISSUES", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "FREIGHT", "float")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "TOTAL", "float")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "ORDERLINE", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "COMPANY_CODE", "String", v.Caller.CompanyCode)
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "CUSTOMER_ID", "String")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "QUANTITY_SHIPPED", "float")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "QUANTITY_INVOICED", "string")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "COST_LINE", "float")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "COST_TOTAL", "float")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "CUSTOMERDUEDATE", "Date")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "INVOICEDATE", "Date")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "SHIP_VIA", "string")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "INVOICE", "string")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "USER_2", "string")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "USER_3", "string")
+	f.Data.DataTable.AddColumn("openOrderdLinesDT", "USER_4", "string")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.CreateEmptyDTs.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'f.Intrinsic.Control.If(v.ODBC.con.State, =, 1)
+'	f.ODBC.Connection!con.Close
+'f.Intrinsic.Control.EndIf
+'Generic Error message.
+f.Intrinsic.String.Build("An error has occured. {0}Please take a screenshot of the next message showing the error information.{0}The program will close after the second message.", v.Ambient.NewLine, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+f.Intrinsic.String.Build("Project GCG_5343_Job_History_Dashboard.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.checkCustomFolder.Start
+v.Local.sFolder.Declare
+v.Local.bExists.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.Build("{0}\CUSTOM\GCG_5343\", v.Caller.GlobalDir, v.Local.sFolder)
+	f.Intrinsic.File.DirExists(v.Local.sFolder, v.Local.bExists)
+	f.Intrinsic.Control.If(v.Local.bExists.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sFolder)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.checkCustomFolder.End
+
+Program.Sub.F_JobHistory_UnLoad.Start
+f.Intrinsic.Control.CallSub(Serialize)
+f.Intrinsic.Control.End
+Program.Sub.F_JobHistory_UnLoad.End
+
+Program.Sub.createOrderLines.Start
+v.Local.sSQL.Declare
+v.Local.iCnt.Declare
+v.Local.sFilter.Declare
+v.Local.sStartDate.Declare
+v.Local.sEndDate.Declare
+v.Local.sTempDates.Declare
+v.Local.sTemp.Declare
+v.Local.sDateField.Declare
+
+v.Local.sWhereClause.Declare
+v.Local.sNotIn.Declare
+f.Intrinsic.Control.Try
+	'Checks datatables don't exist.
+	f.Intrinsic.Control.If(v.DataTable.ordersDT.Exists)
+		f.Data.DataTable.Close("ordersDT")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.DataTable.orderLnsDT.Exists)
+		f.Data.DataTable.Close("orderLnsDT")
+	f.Intrinsic.Control.EndIf
+
+	v.Local.sStartDate.Set(v.Screen.F_JobHistory!dtpStartDate.Value)
+	f.Intrinsic.String.Split(v.Local.sStartDate, " ", v.Local.sStartDate)
+'	f.Intrinsic.String.Split(v.Local.sTempDates(0), "/", v.Local.sTemp)
+'	f.Intrinsic.String.Build("{0}-{1}-{2}", v.Local.sTemp(2), v.Local.sTemp(0), v.Local.sTemp(1), v.Local.sStartDate)
+
+	
+	v.Local.sEndDate.Set(v.Screen.F_JobHistory!dtpEndDate.Value)
+	f.Intrinsic.String.Split(v.Local.sEndDate, " ", v.Local.sEndDate)
+'	f.Intrinsic.String.Split(v.Local.sTempDates(0), "/", v.Local.sTemp)
+'	f.Intrinsic.String.Build("{0}-{1}-{2}", v.Local.sTemp(2), v.Local.sTemp(0), v.Local.sTemp(1), v.Local.sEndDate)
+	
+'	f.Intrinsic.Control.If(v.Global.sDateFieldTitle.Trim,  =, "DATE_ORDER")		
+		f.Intrinsic.String.Build("Where DATE_ORDER  >= '{0}' and DATE_ORDER <= '{1}'", v.Local.sStartDate(0).PervasiveDate, v.Local.sEndDate(0).PervasiveDate, v.Local.sWhereClause)
+		v.Local.sDateField.Set("DATE_ORDER")
+		f.Intrinsic.String.Build("order_no not in (select order_no from v_order_lines Where DATE_ORDER  >= '{0}' and DATE_ORDER <= '{1}')", v.Local.sStartDate(0).PervasiveDate, v.Local.sEndDate(0).PervasiveDate, v.Local.sNotIn)
+'	f.Intrinsic.Control.Else
+'		f.Intrinsic.String.Build("Where Order_no in (Select distinct Order_no from V_SHIPMENT_HEADER where Date_Shipped >= '{0}' and Date_Shipped <= '{1}')", v.Local.sStartDate(0).PervasiveDate, v.Local.sEndDate(0).PervasiveDate, v.Local.sWhereClause)
+'		v.Local.sDateField.Set("Date_Ship")
+'		f.Intrinsic.String.Build("Order_no not in (Select distinct Order_no from V_SHIPMENT_HEADER where Date_Shipped >= '{0}' and Date_Shipped <= '{1}')", v.Local.sStartDate(0).PervasiveDate, v.Local.sEndDate(0).PervasiveDate, v.Local.sNotIn)
+'	f.Intrinsic.Control.EndIf
+	'case when date_order <> null then 01011900 else 
+	'creates datatables for Open Orders: order_header, order_hist_header; Closed Orders: order_hist_header, orders_hist_lines; Uses Order_header B and C to get city and state.
+	f.ODBC.Connection!con.OpenCompanyConnection(999999999)
+		f.Intrinsic.String.Build("Select Customer, Customer as CUSTOMER_ID, order_no, order_suffix, ' ' as INVOICE, order_no as billed_To, order_no as shipped_To, order_no as clinician, order_no CLINICIAN_EMAIL, USER_5 as inputGrade, USER_1 as patientName, USER_2,USER_3,USER_4,customer_po, date_order, date_due, tracking_no  from v_order_header {0}", v.Local.sWhereClause,  v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("ordersDT", "con", v.Local.sSQL)
+		
+		f.Intrinsic.String.Build("Select Customer, Customer as CUSTOMER_ID, order_no, order_suffix, INVOICE,  Rtrim(city)+', '+Rtrim(state) as billed_To, RTRIM(city_ship)+', '+RTRIM(state_ship) as shipped_To, contact as clinician, CONTACT_EMAIL as CLINICIAN_EMAIL, USER_5 as inputGrade, USER_1 as patientName, USER_2,USER_3,USER_4,customer_po, date_order, date_order_due  as date_due, PCK_NO,'' as tracking_no from v_order_hist_head  {0}", v.Local.sWhereClause,  v.Local.sSQL)
+		
+		f.Data.DataTable.CreateFromSQL("order_Hist_DT", "con",  v.Local.sSQL)
+		f.Data.Dictionary.CreateFromSQL("dTrackingNo","con","Select PCK_NO, TRACKING_NO from v_order_hist_head where TRACKING_NO <> ''")
+		f.Data.Dictionary.SetDefaultReturn("dTrackingNo","")
+		f.Data.Datatable.FillFromDictionary("order_Hist_DT","dTrackingNo","PCK_NO","tracking_no")
+		f.Data.Dictionary.Close("dTrackingNo")
+		f.Data.Datatable.RemoveColumn("order_Hist_DT","PCK_NO")
+		', '1/1/1900' as INVOICEDATE
+		f.Intrinsic.String.Build("Select order_no+'000'+left(record_no, 3) as QUANTITY_INVOICED, order_no, left(record_no, 3) as record_no, part, description, product_Line, qty_ordered, cast(price as float) as unit_price, cast(extension_order as float) as Price, cost as COST_LINE, MUST_DLVR_BY_DATE as CUSTOMERDUEDATE from v_order_lines  {0}  and record_no <> '8000'", v.Local.sWhereClause,  v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("orderLnsDT", "con", v.Local.sSQL)
+		f.Data.DataTable.AddColumn("orderLnsDT", "order_suffix", "string", "000")
+		
+		f.Intrinsic.String.Build("Select order_no+left(order_suffix, 3)+left(order_line, 3) as QUANTITY_INVOICED, order_no,  left(order_suffix, 3) as order_suffix, left(order_line, 3) as record_no,  part, description, product_Line, qty_ordered, cast(price as float)  as unit_price, cast(extension_order as float) as Price, cost as COST_LINE, MUST_DLVR_DATE as CUSTOMERDUEDATE, date_invoice as INVOICEDATE,USER_1,USER_2,USER_3,USER_4,USER_5 from v_order_hist_line  {0}  and order_line <> '8000'", v.Local.sWhereClause,  v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("order_Hist_LnsDT", "con", v.Local.sSQL)
+		
+		f.Intrinsic.String.Build("Select order_no+left(order_suffix, 3)+left(order_rec, 3) as QUANTITY_INVOICED, order_no,  left(order_suffix, 3) as order_suffix, left(order_rec, 3) as record_no,  part, order_desc as description, product_Line, qty_ordered, cast(price as float)  as unit_price, cast(extension_order as float) as Price, cost as COST_LINE, MUST_DLVR_BY_DATE as CUSTOMERDUEDATE, DATE_LAST_INV as INVOICEDATE from V_shipment_lines where {2}  >= '{0}' and {2} <= '{1}' and order_rec <> '8000' and {3}", v.Local.sStartDate(0).PervasiveDate, v.Local.sEndDate(0).PervasiveDate, v.Local.sDateField, v.Local.sNotIn, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("ship_LnsDT", "con", v.Local.sSQL)
+
+		f.Data.Dictionary.CreateFromSQL("shipToDT", "con", "Select Order_No, RTrim(city_ship)+', '+Rtrim(state_ship) as shipped_To From V_ORDER_SHIP_TO")
+		f.Data.Dictionary.CreateFromSQL("billToDT", "con", "Select Order_No, Rtrim(city)+', '+Rtrim(state) as billed_To From V_ORDER_BILL_TO")
+		
+		f.Data.Dictionary.CreateFromSQL("billClinicianDT", "con", "Select Order_No, Contact from V_ORDER_BILL_TO")
+		f.Data.Dictionary.CreateFromSQL("billClinicianEmailDT", "con", "Select Order_No, CONTACT_EMAIL from V_ORDER_BILL_TO")
+		'f.Data.Dictionary.CreateFromSQL("billToDT", "con", "Select Order_No, Rtrim(city)+', '+Rtrim(state) as billed_To From V_ORDER_BILL_TO union Select Order_No, Rtrim(city)+', '+Rtrim(state) as billed_To From Order_hist_head")
+		'f.Data.Dictionary.CreateFromSQL("extensionLine", "con", "select order_no, sum(extension_Order) as extension from V_order_lines group by order_no")
+		f.Data.Dictionary.CreateFromSQL("extensionLineHist", "con", "select order_no, sum(extension_Order) as extension from v_order_hist_line group by order_no")
+		f.Data.Dictionary.CreateFromSQL("costLineHist", "con", "select order_no, sum(Cost) as totalCost from v_order_hist_line group by order_no")
+		
+		f.Data.DataTable.CreateFromSQL("openExtensionLine", "con", "select order_no, sum(extension_Order) as extension1, sum(Cost) as totalCost1 from V_order_lines where order_No <> ''  group by order_no")
+		f.Data.DataTable.CreateFromSQL("openExtensionShip", "con", "select order_no, sum(cast(price as float)) as extension2, sum(Cost) as totalCost2 from V_shipment_Lines where order_No <> '' group by order_no")
+		f.Data.DataTable.CreateFromSQL("openOrder", "con", "Select distinct order_no from v_order_lines union Select distinct Order_No from V_shipment_Lines")
+		
+		f.Data.Linq.Join("leftjoin", "datatable", "openOrder *!*O", "datatable", "openExtensionLine*!*L", "O.order_no = L.order_no", "O.Order_no*!*L.extension1*!*l.totalCost1", "", "","O.Order_no", "tmpTotalOpenOrderDT", True)
+		f.Data.Linq.Join("leftjoin", "datatable", "tmpTotalOpenOrderDT *!*L", "datatable", "openExtensionShip*!*S", "L.order_no = S.order_no", "L.Order_no*!*L.extension1*!*S.extension2*!*L.totalCost1*!*S.totalcost2", "", "","L.Order_no", "totalOpenOrderDT", True)
+		
+		'f.Data.Linq.Join("leftjoin","datatable", "openExtensionLine*!*l", "datatable", "openExtensionShip*!*s", "l.Order_no = s.Order_no", "l.Order_no*!*l.extension1*!*s.extension2*!*l.totalCost1*!*s.totalcost2", "", "", "l.order_no", "totalOpenOrderDT", true)
+		f.Data.DataTable.AddExpressionColumn("totalOpenOrderDT", "extension3", "float", "IsNull(extension2, 0.00)")
+		f.Data.DataTable.AddExpressionColumn("totalOpenOrderDT", "extension4", "float", "IsNull(extension1, 0.00)")
+		f.Data.DataTable.AddExpressionColumn("totalOpenOrderDT", "extension", "float", "extension4 + extension3")
+'88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+		f.Data.DataTable.AddExpressionColumn("totalOpenOrderDT", "totalcost3", "float", "IsNull(totalcost2, 0.00)")
+		f.Data.DataTable.AddExpressionColumn("totalOpenOrderDT", "totalcost4", "float", "IsNull(totalcost1, 0.00)")
+		f.Data.DataTable.AddExpressionColumn("totalOpenOrderDT", "COST_TOTAL", "float", "IIF(totalcost2>=totalcost4, [totalcost2], [totalcost4])")
+	'	f.Data.DataTable.AddExpressionColumn("totalOpenOrderDT", "COST_TOTAL", "float", "extension1 + extension3")
+		
+		f.Data.Dictionary.CreateFromDataTable("extensionLine", "totalOpenOrderDT", "Order_no", "extension")
+		f.Data.Dictionary.CreateFromDataTable("costLine", "totalOpenOrderDT", "Order_no", "COST_TOTAL")
+		
+		f.Data.DataTable.Close("openOrder")
+		f.Data.DataTable.Close("openExtensionLine")
+		f.Data.DataTable.Close("openExtensionShip")
+		f.Data.DataTable.Close("tmpTotalOpenOrderDT")
+		f.Data.DataTable.Close("totalOpenOrderDT")
+		
+		f.Data.DataTable.CreateFromSQL("qtyInvDT", "con", "select order_no, right(order_suffix, 3) as order_suffix, left(order_line, 3) as order_line, sum(qty_shipped) as QUANTITY_INVOICED from v_order_hist_line group by order_no, order_suffix, order_line")
+		f.Data.DataTable.AddExpressionColumn("qtyInvDT", "keyCol", "string", "order_no+order_suffix+order_line")
+		f.Data.Dictionary.CreateFromDataTable("qtyInvDict", "qtyInvDT", "keyCol", "QUANTITY_INVOICED")
+		f.Data.Dictionary.SetDefaultReturn("qtyInvDict", "")
+		f.Data.DataTable.Close("qtyInvDT")
+	f.ODBC.Connection!con.Close
+	
+	'adds column TypeOrder to distinguish Open orders from Closed orders. this column is added to all 4 tables that will be merged into 2 tables.
+	f.Data.DataTable.AddColumn("ordersDT", "TypeOrder", "String","O")
+	f.Data.DataTable.AddColumn("orderLnsDT", "TypeOrder", "String","O")
+	f.Data.DataTable.AddColumn("ship_LnsDT", "TypeOrder", "String","O")
+	f.Data.DataTable.AddColumn("order_Hist_LnsDT", "TypeOrder", "String", "H")
+	f.Data.DataTable.AddColumn("order_Hist_DT", "TypeOrder", "String", "H")
+	
+	f.Data.DataTable.Merge("ship_LnsDT", "orderLnsDT", false, 2)
+	f.Data.DataTable.Close("ship_LnsDT")
+	
+	f.Data.DataTable.AddColumn("order_Hist_LnsDT", "Extension", "String", "")
+	f.Data.DataTable.AddColumn("order_Hist_LnsDT", "COST_TOTAL", "String", "")
+	f.Data.DataTable.AddColumn("orderLnsDT", "Extension", "String", "")
+	f.Data.DataTable.AddColumn("orderLnsDT", "COST_TOTAL", "String", "")
+'	citiesStatesDT has lines corresponding to record B and C for Orders_Headers. In each line we get the state from the 2 first charactes of User_3 and we get the city from User_2. Then creates a dataview of a single order from OrdersDT(order_header).
+	f.Data.Dictionary.SetDefaultReturn("billToDT", "")
+	f.Data.DataTable.FillFromDictionary("ordersDT", "billToDT", "billed_To")
+	'f.Data.DataTable.FillFromDictionary("order_Hist_DT", "billToDT", "billed_To")
+	f.Data.Dictionary.Close("billToDT")
+	
+	f.Data.Dictionary.SetDefaultReturn("billClinicianDT", "")
+	f.Data.DataTable.FillFromDictionary("ordersDT", "billClinicianDT", "clinician")
+	'f.Data.DataTable.FillFromDictionary("order_Hist_DT", "billToDT", "billed_To")
+	f.Data.Dictionary.Close("billClinicianDT")
+	
+	f.Data.Dictionary.SetDefaultReturn("billClinicianEmailDT", "")
+	f.Data.DataTable.FillFromDictionary("ordersDT", "billClinicianEmailDT", "CLINICIAN_EMAIL")
+	'f.Data.DataTable.FillFromDictionary("order_Hist_DT", "billToDT", "billed_To")
+	f.Data.Dictionary.Close("billClinicianEmailDT")
+	
+	f.Data.Dictionary.SetDefaultReturn("shipToDT", "")
+	f.Data.DataTable.FillFromDictionary("ordersDT", "shipToDT", "shipped_To")
+	'f.Data.DataTable.FillFromDictionary("order_Hist_DT", "shipToDT", "shipped_To")
+	f.Data.Dictionary.Close("shipToDT")
+
+	'Extension Dictionary
+	f.Data.Dictionary.SetDefaultReturn("extensionLine", "")
+	f.Data.DataTable.FillFromDictionary("orderLnsDT", "extensionLine", "Order_no", "Extension")
+	f.Data.Dictionary.Close("extensionLine")
+	
+	f.Data.Dictionary.SetDefaultReturn("costLine", "")
+	f.Data.DataTable.FillFromDictionary("orderLnsDT", "costLine", "Order_no", "COST_TOTAL")
+	f.Data.Dictionary.Close("costLine")
+	
+	f.Data.Dictionary.SetDefaultReturn("extensionLineHist", "")
+	f.Data.DataTable.FillFromDictionary("order_Hist_LnsDT", "extensionLineHist", "Order_no", "Extension")
+	f.Data.Dictionary.Close("extensionLineHist")	
+	
+	f.Data.Dictionary.SetDefaultReturn("costLineHist", "")
+	f.Data.DataTable.FillFromDictionary("order_Hist_LnsDT", "costLineHist", "Order_no", "COST_TOTAL")
+	f.Data.Dictionary.Close("costLineHist")	
+
+	'merges the historical datatables (closed orders) into open orders. Header_hist to Header, Lines_hsit to Lines.
+	f.Data.DataTable.Merge("order_Hist_DT", "ordersDT", true, 2)
+	f.Data.DataTable.Close("order_Hist_DT")
+
+	f.Data.DataTable.Merge("order_Hist_LnsDT", "orderLnsDT", true, 1)
+	f.Data.DataTable.Close("order_Hist_LnsDT")
+
+	f.Data.DataTable.FillFromDictionary("orderLnsDT", "qtyInvDict", "QUANTITY_INVOICED", "QUANTITY_INVOICED")
+	f.Data.Dictionary.Close("qtyInvDict")
+	
+	f.Intrinsic.Control.If(v.DataTable.ordersDT.RowCount, =, 0)
+		v.Global.bNotEmpty.Set(false)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.Else
+		v.Global.bNotEmpty.Set(True)
+	f.Intrinsic.Control.EndIf
+	'link joins orders to lines. Right Join: joining all Lines to matching Headers.
+	f.Data.Linq.Join("rightjoin", "datatable", "ordersDT*!*O", "datatable", "orderLnsDT*!*L", "O.order_no = L.order_no", "O.CUSTOMER_ID*!*O.customer*!*O.billed_To*!*O.shipped_To*!*O.clinician as clinician*!*O.CLINICIAN_EMAIL*!*L.order_no*!*L.order_suffix*!*O.customer_po*!*L.record_no*!*O.inputGrade*!*O.patientName*!*O.USER_2*!*O.USER_3*!*O.USER_4*!*L.part*!*L.product_Line*!*L.description*!*O.date_order*!*O.date_due*!*L.TypeOrder*!*L.qty_ordered*!*L.unit_price*!*L.Price*!*L.extension*!*O.tracking_no*!*L.COST_TOTAL*!*L.COST_LINE*!*L.QUANTITY_INVOICED*!*L.CUSTOMERDUEDATE*!*L.INVOICEDATE*!*O.INVOICE", "", "","O.order_no", "orderLinesJoinDT", true)
+		
+'	f.Data.DataTable.AddColumn("orderLinesJoinDT", "QUANTITY_INVOICED", "String")
+'	f.Data.DataTable.AddExpressionColumn("orderLinesJoinDT", "keyCol", "string", "order_no+order_suffix+order_line")
+'	f.Data.DataTable.FillFromDictionary("orderLinesJoinDT", "qtyInvDict", "keyCol", "QUANTITY_INVOICED")
+'	f.Data.Dictionary.Close("qtyInvDict")
+
+	'if the new joined table exists, closes the used datatables.
+	f.Intrinsic.Control.If(v.DataTable.orderLinesJoinDT.Exists)
+		f.Data.DataTable.Close("ordersDT")
+		f.Data.DataTable.Close("orderLnsDT")
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.Catch
+
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createOrderLines.End
+
+Program.Sub.createWorkOderSuffix.Start
+v.Local.sRet.Declare
+v.Local.sSQL.Declare
+v.Local.iCnt.Declare
+
+v.Local.sDistinctJobs.Declare
+v.Local.sJobTemp.Declare
+v.Local.sSuffixTemp.Declare
+v.Local.sDateStarted.Declare
+v.Local.sFilter.Declare
+v.Local.sCurrentJobSeq.Declare
+v.Local.sNextJobSeq.Declare
+
+f.Intrinsic.Control.Try
+	'creates datatables for order_to_wo: links orders to work orders.  Calls from Job Details to get the current and next Job Sequence. Creates Dictionary for start work order due date.
+	f.ODBC.Connection!con.OpenCompanyConnection(999999999)
+		f.Data.DataTable.CreateFromSQL("orderToWoDT", "con", "Select job + suffix as workOrderSuffix, job + suffix as workOrderDueDate, job + suffix as woOHold, job + suffix as workOrderQTY, job, suffix, order_no, substring (order_line, 1,3) as order_line, part, description, date_order_due, date_job_due from v_order_to_wo", true)		
+		'f.Data.Dictionary.CreateFromSQL("jobDateSequence", "con", "select job+suffix as workOrderSuffix, min (date_sequence) as date_sequence from V_Job_Detail group by workOrderSuffix")
+		f.Data.Dictionary.CreateFromSQL("jobDateSequence", "con", "select job+suffix as workOrderSuffix, min (date_sequence) as date_sequence from V_Job_Detail group by workOrderSuffix union select job+suffix as workOrderSuffix, min (start_date) as date_sequence from V_JOBS_IN_PROCESS_G where seq = '000100' group by workOrderSuffix")
+		f.Data.Dictionary.CreateFromSQL("jobDueDate", "con", "Select job+suffix, date_due from V_job_header")
+		f.Data.Dictionary.CreateFromSQL("onHoldDate", "con", "Select job+suffix, date_due from V_job_header")
+		f.Data.Dictionary.CreateFromSQL("jobQTY", "con", "Select job+suffix, QTY_ORDER from job_header")
+	f.ODBC.Connection!con.Close
+	
+	'create columns: Date_sequence holds date when the work started; Current and Next Job Sequence on the orderToWoDT to hold current and Next sequences.
+	f.Data.DataTable.AddColumn("orderToWoDT", "Date_Sequence", "string", "")
+	f.Data.DataTable.AddColumn("orderToWoDT", "CurrentJobSeq", "string")
+	f.Data.DataTable.AddColumn("orderToWoDT", "NextJobSeq", "string")
+	
+'	f.Data.DataTable.AddColumn("orderToWoDT", "date_ship", "date")
+'	f.Data.DataTable.AddColumn("orderToWoDT", "priceFreight", "float")
+	
+	'Add columns for the calculated days: turnaround, iddle days, days late. Fills from dictionary job order due date.
+
+	
+	f.Data.Dictionary.SetDefaultReturn("jobDateSequence", "")
+	f.Data.DataTable.FillFromDictionary("orderToWoDT", "jobDateSequence", "workOrderSuffix", "date_sequence")
+	f.Data.Dictionary.Close("jobDateSequence")
+
+	'link join orderLinesDT to the job sequences, joining all of order_lines to the matching job Sequences.
+	f.Data.Linq.Join("rightjoin", "datatable", "orderToWoDT*!*O", "datatable", "orderLinesJoinDT*!*L", "O.order_no = L.order_no and O.order_line = L.record_no", "L.CUSTOMER_ID*!*L.customer*!*L.billed_to*!*L.shipped_to*!*L.clinician*!*L.CLINICIAN_EMAIL*!*L.order_no*!*L.record_no*!*L.customer_po*!*O.workOrderSuffix*!*L.inputGrade*!*L.patientName*!*L.USER_2*!*L.USER_3*!*L.USER_4*!*L.part*!*L.description*!*L.product_Line*!*L.date_order*!*O.Date_Sequence*!*L.date_due*!*O.workOrderDueDate*!*O.woOHold*!*O.workOrderQTY*!*O.CurrentJobSeq*!*O.NextJobSeq*!*L.TypeOrder*!*L.qty_ordered*!*L.unit_price*!*L.Price*!*L.extension*!*L.tracking_no*!*O.part as WO_Part*!*O.Job*!*O.Suffix*!*l.COST_TOTAL*!*L.COST_LINE*!*L.QUANTITY_INVOICED*!*L.CUSTOMERDUEDATE*!*L.INVOICEDATE*!*L.INVOICE", "", "","L.order_no", "jobDetailJoinDT", true)
+
+	'closing used datatable.
+	f.Data.DataTable.Close("orderToWoDT")
+	f.Data.DataTable.Close("orderLinesJoinDT")
+	
+	'Fill from dictionary
+	f.Data.Dictionary.SetDefaultReturn("jobDueDate", "")
+	f.Data.DataTable.FillFromDictionary("jobDetailJoinDT", "jobDueDate", "workOrderDueDate")
+	f.Data.Dictionary.Close("jobDueDate")
+	'****
+	f.Data.Dictionary.SetDefaultReturn("onHoldDate", "")
+	f.Data.DataTable.FillFromDictionary("jobDetailJoinDT", "onHoldDate", "woOHold")
+	f.Data.Dictionary.Close("onHoldDate")
+	
+	'Fill from dictionary
+	f.Data.Dictionary.SetDefaultReturn("jobQTY", "")
+	f.Data.DataTable.FillFromDictionary("jobDetailJoinDT", "jobQTY", "workOrderQTY")
+	f.Data.Dictionary.Close("jobQTY")
+	
+	'Formatting Dates
+	f.Data.DataTable.SetValueFormat("jobDetailJoinDT", -1, "date_sequence", "date_sequence", "MM/DD/YYYY")
+	'f.Data.DataTable.SetValueFormat("jobDetailJoinDT", -1, "date_sequence", "date_sequence", "YYMMDD")
+	f.Data.DataTable.SetValueFormat("jobDetailJoinDT", -1, "workOrderDueDate", "workOrderDueDate", "MM/DD/YYYY")
+	f.Data.DataTable.SetValueFormat("jobDetailJoinDT", -1, "CUSTOMERDUEDATE", "CUSTOMERDUEDATE", "MM/DD/YYYY")
+	'f.Data.DataTable.SetValueFormat("jobDetailJoinDT", -1, "INVOICEDATE", "INVOICEDATE", "MM/DD/YYYY")
+	
+	'Add columns for the calculated days: turnaround, iddle days, days late. Fills from dictionary job order due date.
+	f.Data.DataTable.AddColumn("jobDetailJoinDT", "turnaround", "String")
+	f.Data.DataTable.AddColumn("jobDetailJoinDT", "idle_Days", "String")
+	f.Data.DataTable.AddColumn("jobDetailJoinDT", "Days_Late", "date")
+	
+'	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "qtyCheck", "String", "0")
+'	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "dateCheck", "String", "0")
+'	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "partCheck", "String", "0")
+'	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "multipleIssues", "String", "0")
+''	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "date_ship", "Date")
+'	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "priceFreight", "Float")
+''	
+'	f.Data.DataTable.AddExpressionColumn("tmpOpenOrderdLinesDT", "Freight", "Float", "IsNull(priceFreight, 0.00)")
+'	f.Data.DataTable.AddExpressionColumn("tmpOpenOrderdLinesDT", "Total", "Float", "Price+Freight")
+'	'******************************************************************************************************************
+'	Function.Intrinsic.Debug.InvokeDebugger
+'	Function.Intrinsic.Debug.Stop
+
+'	'Merge is not working.
+'	f.Data.DataTable.DeleteRow("openOrderdLinesDT")
+'	f.Data.DataTable.AcceptChanges("openOrderdLinesDT")
+'	f.Data.DataTable.Merge("tmpOpenOrderdLinesDT", "openOrderdLinesDT", FALSE, 2)
+'	f.Data.DataTable.Close("tmpOpenOrderdLinesDT")
+'	
+	'f.Intrinsic.Control.CallSub(getSequences)
+f.Intrinsic.Control.Catch
+
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createWorkOderSuffix.End
+
+Program.Sub.createDictionaries.Start
+v.Local.sSQL.Declare
+
+f.Intrinsic.Control.Try
+
+	'PSQL Dictionaries
+	f.ODBC.Connection!conSQL.OpenCompanyConnection
+		f.Data.Dictionary.CreateFromSQL("customerDictionary", "conSQL", "Select Customer, Name_Customer from V_Customer_Master order by Customer asc")
+			'Customer Dictionary
+			f.Data.Dictionary.SetDefaultReturn("customerDictionary", "")
+			f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "customerDictionary", "Customer")
+		f.Data.Dictionary.Close("customerDictionary")
+		
+		
+		f.Data.Dictionary.CreateFromSQL("dUser2", "conSQL", "select distinct ORDER_NO, RTRIM(USER_2) from V_ORDER_HEADER union select distinct ORDER_NO, RTRIM(USER_2) from V_ORDER_HIST_HEAD")
+		f.Data.Dictionary.SetDefaultReturn("dUser2", "")
+		f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "dUser2","ORDER_NO" ,"USER_2")
+		f.Data.Dictionary.Close("dUser2")
+		
+		f.Data.Dictionary.CreateFromSQL("dUser3", "conSQL", "select distinct ORDER_NO, RTRIM(USER_3) from V_ORDER_HEADER union select distinct ORDER_NO, RTRIM(USER_3) from V_ORDER_HIST_HEAD")
+		f.Data.Dictionary.SetDefaultReturn("dUser3", "")
+		f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "dUser3", "ORDER_NO" ,"USER_3")
+		f.Data.Dictionary.Close("dUser3")
+		
+		f.Data.Dictionary.CreateFromSQL("dUser4", "conSQL", "select distinct ORDER_NO, RTRIM(USER_4) from V_ORDER_HEADER union select distinct ORDER_NO, RTRIM(USER_4) from V_ORDER_HIST_HEAD")
+		f.Data.Dictionary.SetDefaultReturn("dUser4", "")
+		f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "dUser4", "ORDER_NO" ,"USER_4")
+		f.Data.Dictionary.Close("dUser4")
+		
+		'f.Data.Dictionary.CreateFromSQL("customer")
+	f.ODBC.Connection!conSQL.Close
+	
+'***************************************************************************************************************************************************************************************************	
+	'if statement is just a stop gap until the SQL part is done. (startIf)
+'***************************************************************************************************************************************************************************************************
+	f.Intrinsic.Control.If(False)
+'***************************************************************************************************************************************************************************************************
+	'Looks like SQLServer data is using Order_no as primary key. double check this.
+'***************************************************************************************************************************************************************************************************
+
+	'open connection to SQLServer Express DB, and create dictionaries for Clinician Name, Patient Name, Input Grade. 	
+	f.ODBC.Connection!conSQL.OpenCompanyConnection
+		f.Data.Dictionary.CreateFromSQL("cNameDictionary", "conSQL", "Select Order_No, c_Name from GCG_5343_cpInfo")
+		f.Data.Dictionary.SetDefaultReturn("cNameDictionary", "")
+		f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "cNameDictionary", "Clinician")
+		f.Data.Dictionary.Close("cNameDictionary")
+		
+		f.Data.Dictionary.CreateFromSQL("pNameDictionary", "conSQL", "Select Order_No, p_Name from GCG_5343_cpInfo")
+		f.Data.Dictionary.SetDefaultReturn("pNameDictionary", "")
+		f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "pNameDictionary", "patientName")
+		f.Data.Dictionary.Close("pNameDictionary")
+		
+		f.Data.Dictionary.CreateFromSQL("inputGradeDictionary", "conSQL", "Select Order_No, Input_Grade from GCG_5343_cpInfo")
+		f.Data.Dictionary.SetDefaultReturn("inputGradeDictionary", "")
+		f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "inputGradeDictionary", "inputGrade")
+		f.Data.Dictionary.Close("inputGradeDictionary")
+		
+		
+	f.ODBC.Connection!conSQL.Close
+	
+'***************************************************************************************************************************************************************************************************
+	'if statement is just a stop gap until the SQL part is done. (endIf)	
+'***************************************************************************************************************************************************************************************************
+
+
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.If(v.ODBC.conSQL.State, =, 1)
+		f.ODBC.Connection!conSQL.Close
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createDictionaries.End
+	
+Program.Sub.loadProperties.Start
+v.Local.iCnt.Declare
+v.Local.sTemp.Declare
+
+f.Intrinsic.Control.Try
+	'HeaderFontBold
+	
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"BILLED_TO","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIPPED_TO","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN_EMAIL","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"RECORD_NO","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_PO","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INPUTGRADE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PATIENTNAME","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DESCRIPTION","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRODUCT_LINE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_ORDER","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_DUE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"woOHold","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SHIP","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TURNAROUND","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"idle_Days","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DAYS_LATE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CURRENTJOBSEQ","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"NEXTJOBSEQ","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QTY_ORDERED","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"UNIT_PRICE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICEFREIGHT","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TYPEORDER","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"EXTENSION","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TRACKING_NO","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"FREIGHT","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TOTAL","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COMPANY_CODE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_ID","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_SHIPPED","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_INVOICED","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_LINE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_TOTAL","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMERDUEDATE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICEDATE","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIP_VIA","HeaderFontBold",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"Invoice","HeaderFontBold",True)
+	
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"USER_2","HeaderFontBold",True)
+	
+	'Visible
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"BILLED_TO","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIPPED_TO","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN_EMAIL","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"RECORD_NO","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_PO","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INPUTGRADE","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PATIENTNAME","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DESCRIPTION","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRODUCT_LINE","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_ORDER","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_DUE","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"woOHold","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SHIP","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TURNAROUND","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"idle_Days","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DAYS_LATE","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CURRENTJOBSEQ","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"NEXTJOBSEQ","Visible",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QTY_ORDERED","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"UNIT_PRICE","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICEFREIGHT","Visible",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TYPEORDER","Visible",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TYPEORDER2","Visible",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"EXTENSION","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TRACKING_NO","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"FREIGHT","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICE","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TOTAL","Visible",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"OrderLine","Visible",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMERDUEDATE","Visible",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICEDATE","Visible",True)
+	
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"Job","Visible",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"Suffix","Visible",False)	
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "workorderqty", "Visible", false)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "wo_part", "Visible", false)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "qtyCheck", "Visible", false)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "dateCheck", "Visible", false)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "partCheck", "Visible", false)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "multipleIssues", "Visible", false)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "USER_3", "Visible", false)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "USER_4", "Visible", false)
+	
+	'ReadOnly woOHold
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"BILLED_TO","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIPPED_TO","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN_EMAIL","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"RECORD_NO","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_PO","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INPUTGRADE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PATIENTNAME","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DESCRIPTION","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRODUCT_LINE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_ORDER","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_DUE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"woOHold","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SHIP","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TURNAROUND","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"idle_Days","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DAYS_LATE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CURRENTJOBSEQ","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"NEXTJOBSEQ","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QTY_ORDERED","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"UNIT_PRICE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICEFREIGHT","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TYPEORDER","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"EXTENSION","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TRACKING_NO","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"FREIGHT","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TOTAL","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COMPANY_CODE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_ID","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_SHIPPED","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_INVOICED","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_LINE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_TOTAL","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMERDUEDATE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICEDATE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIP_VIA","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICE","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"USER_2","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"USER_3","ReadOnly",True)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"USER_4","ReadOnly",True)
+	
+	'AllowEdit woOHold
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","AllowEdit", False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"BILLED_TO","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIPPED_TO","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN_EMAIL","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"RECORD_NO","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_PO","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INPUTGRADE","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PATIENTNAME","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DESCRIPTION","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRODUCT_LINE","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_ORDER","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_DUE","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"woOHold","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SHIP","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TURNAROUND","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"idle_Days","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DAYS_LATE","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CURRENTJOBSEQ","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"NEXTJOBSEQ","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QTY_ORDERED","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"UNIT_PRICE","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICEFREIGHT","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TYPEORDER","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"EXTENSION","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TRACKING_NO","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"FREIGHT","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICE","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TOTAL","AllowEdit",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COMPANY_CODE","ReadOnly",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_ID","ReadOnly",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_SHIPPED","ReadOnly",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_INVOICED","ReadOnly",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_LINE","ReadOnly",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_TOTAL","ReadOnly",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMERDUEDATE","ReadOnly",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICEDATE","ReadOnly",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIP_VIA","ReadOnly",False)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICE","ReadOnly",False)
+	
+	'HeaderHAlignment woOHold
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"BILLED_TO","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIPPED_TO","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN_EMAIL","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"RECORD_NO","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_PO","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INPUTGRADE","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PATIENTNAME","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DESCRIPTION","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRODUCT_LINE","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"woOHold","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TURNAROUND","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"idle_Days","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DAYS_LATE","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CURRENTJOBSEQ","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"NEXTJOBSEQ","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TYPEORDER","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TRACKING_NO","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMERDUEDATE","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICEDATE","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIP_VIA","HeaderHAlignment","Near")
+	
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QTY_ORDERED", "HeaderHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"UNIT_PRICE", "HeaderHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICEFREIGHT", "HeaderHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"EXTENSION", "HeaderHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"FREIGHT", "HeaderHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICE", "HeaderHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TOTAL", "HeaderHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICE","HeaderHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"USER_2","HeaderHAlignment","Near")
+
+	
+	'CellHAlignment
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"BILLED_TO","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIPPED_TO","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN_EMAIL","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"RECORD_NO","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_PO","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INPUTGRADE","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PATIENTNAME","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DESCRIPTION","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRODUCT_LINE","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"woOHold","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TURNAROUND","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"idle_Days","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DAYS_LATE","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CURRENTJOBSEQ","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"NEXTJOBSEQ","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TYPEORDER","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TRACKING_NO","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMERDUEDATE","CellHAlignment","Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICEDATE","CellHAlignment","Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIP_VIA","CellHAlignment","Near")
+	
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QTY_ORDERED", "CellHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"UNIT_PRICE", "CellHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICEFREIGHT", "CellHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"EXTENSION", "CellHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"FREIGHT", "CellHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICE", "CellHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TOTAL", "CellHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COMPANY_CODE","CellHAlignment","Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_ID","CellHAlignment", "Center")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICE","CellHAlignment","Near")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"USER_2", "CellHAlignment", "Center")
+	
+	'Caption woOHold
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","Caption","CUSTOMER")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"BILLED_TO","Caption","BILLED TO")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIPPED_TO","Caption","SHIPPED TO")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN","Caption","CLINICIAN")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN_EMAIL","Caption","CLINICIAN EMAIL")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","Caption","SALES NO")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"RECORD_NO","Caption","LINE NO")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_PO","Caption","CUSTOMER PO")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","Caption","WORK ORDER")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INPUTGRADE","Caption","INPUT GRADE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PATIENTNAME","Caption","PATIENT NAME")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","Caption","PART NUMBER")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DESCRIPTION","Caption","DESCRIPTION")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRODUCT_LINE","Caption","PRODUCT LINE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_ORDER","Caption","ORDER DATE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","Caption","START DATE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_DUE","Caption","S.O. DUE DATE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","Caption","W.O. DUE DATE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"woOHold","Caption","W.O. ON HOLD")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SHIP","Caption","SHIPPED DATE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TURNAROUND","Caption","TURNAROUND")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"idle_Days","Caption","DAYS IDLE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DAYS_LATE","Caption","DAYS LATE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CURRENTJOBSEQ","Caption","CURRENT SEQ")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"NEXTJOBSEQ","Caption","NEXT SEQ")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QTY_ORDERED","Caption","QTY ORDERED")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"UNIT_PRICE","Caption","UNIT PRICE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICEFREIGHT","Caption","PRICEFREIGHT")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TYPEORDER","Caption","TYPEORDER")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"EXTENSION","Caption","ORDER TOTAL")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TRACKING_NO","Caption","TRACKING NO")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"FREIGHT","Caption","FREIGHT")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICE","Caption","EXTENDED PRICE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TOTAL","Caption","TOTAL")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COMPANY_CODE","Caption","COMPANY CODE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_ID","Caption", "CUSTOMER ID")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_SHIPPED","Caption","QTY SHIPPED")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_INVOICED","Caption","QTY INVOICED")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_LINE","Caption","COST")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_TOTAL","Caption", "TOTAL COST")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMERDUEDATE","Caption", "CUSTOMER DUE DATE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICEDATE","Caption", "INVOICE DATE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIP_VIA","Caption","COURIER TYPE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICE","Caption","INVOICE")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"USER_2","Caption","CREATED BY")
+	'VisibleIndex woOHold
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_ID","VisibleIndex", v.Local.iCnt)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","VisibleIndex",  v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"RECORD_NO","VisibleIndex",  v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"woOHold","VisibleIndex",  v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"BILLED_TO","VisibleIndex",  v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIPPED_TO","VisibleIndex",  v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN_EMAIL","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_PO","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INPUTGRADE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PATIENTNAME","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DESCRIPTION","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRODUCT_LINE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_ORDER","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_DUE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SHIP","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMERDUEDATE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TURNAROUND","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"idle_Days","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DAYS_LATE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CURRENTJOBSEQ","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICEDATE","VisibleIndex", v.Local.iCnt.++)
+	'gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"NEXTJOBSEQ","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"UNIT_PRICE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QTY_ORDERED","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_SHIPPED","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"QUANTITY_INVOICED","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_LINE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COST_TOTAL","VisibleIndex",  v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PRICE","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"FREIGHT","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"EXTENSION","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TRACKING_NO","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIP_VIA","VisibleIndex", v.Local.iCnt.++)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COMPANY_CODE","VisibleIndex", v.Local.iCnt.++)
+	'CustomDisplay
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_ORDER","DisplayCustomDatetime","d")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","DisplayCustomDatetime","d")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_DUE","DisplayCustomDatetime","d")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","DisplayCustomDatetime","d")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"date_ship","DisplayCustomDatetime","d")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMERDUEDATE","DisplayCustomDatetime","d")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICEDATE","DisplayCustomDatetime","d")
+	
+	'Fixed
+	
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_ID","Fixed", "Left")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","Fixed","Left")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","Fixed","Left")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","Fixed","Left")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INVOICE","Fixed","Left")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER_PO","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"COMPANY_CODE","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"BILLED_TO","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"SHIPPED_TO","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CLINICIAN","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"INPUTGRADE","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PATIENTNAME","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DESCRIPTION","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"product_Line","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_ORDER","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DATE_SEQUENCE","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERDUEDATE","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"date_ship","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"TURNAROUND","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"idle_Days","Fixed","None")
+'	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"DAYS_LATE","Fixed","None")
+	
+	'Links-LtBlue Color
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"CUSTOMER","CellForeColor", v.Color.LtBlue)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"ORDER_NO","CellForeColor", v.Color.LtBlue)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"WORKORDERSUFFIX","CellForeColor", v.Color.LtBlue)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"PART","CellForeColor", v.Color.LtBlue)
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName,"Tracking_no","CellForeColor", v.Color.LtBlue)
+	
+	'DisplayCustomeNumeric
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "PRICE","DisplayCustomNumeric","#,##0.00")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "Total","DisplayCustomNumeric","#,##0.00")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "COST_LINE","DisplayCustomNumeric","#,##0.00")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "COST_TOTAL","DisplayCustomNumeric","#,##0.00")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "EXTENSION","DisplayCustomNumeric","#,##0.00")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "FREIGHT","DisplayCustomNumeric","#,##0.00")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "QUANTITY_SHIPPED","DisplayCustomNumeric","#,##0.00")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "QTY_ORDERED","DisplayCustomNumeric","#,##0.00")
+	gui.F_JobHistory.[v.Args.GsGcName].SetColumnProperty(v.Args.GvName, "QUANTITY_INVOICED","DisplayCustomNumeric","#,##0.00")
+	
+	
+	gui.F_JobHistory.[v.Args.GsGcName].BestFitColumns(v.Args.GvName)
+	
+	gui.F_JobHistory.[v.Args.GsGcName].SetGridviewProperty(v.Args.GvName, "OptionsViewColumnAutoWidth", false)
+	gui.F_JobHistory.[v.Args.GsGcName].SetGridviewProperty(v.Args.GvName, "Showgrouppanel", True)
+	'gui.F_JobHistory.[v.Args.GsGcName].SetGridviewProperty(v.Args.GvName, "Enableappearanceoddrow", true)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadProperties.End
+
+Program.Sub.addDaysCalc.Start
+v.Local.sTemp.Declare
+v.Local.sSecondTemp.Declare
+v.Local.dDateTemp1.Declare
+v.Local.dDateTemp2.Declare
+v.Local.sTemp1.Declare
+v.Local.sTemp2.Declare
+v.Local.iCnt.Declare
+v.Local.iRet.Declare
+v.Local.iMultipleIssues.Declare
+
+v.Local.sOrder.Declare
+v.Local.sOrderHolder.Declare
+v.Local.fPriceHolder.Declare
+v.Local.fExtension.Declare
+
+f.Intrinsic.Control.Try
+	
+	f.Intrinsic.Control.For(v.Local.iCnt,0 , v.DataTable.openOrderdLinesDT.RowCount--, 1)
+		v.Local.iMultipleIssues.Set(0)
+		'Turnaround
+		v.Local.sTemp1.Set(v.DataTable.openOrderdLinesDT(v.Local.iCnt).date_ship!FieldVal)
+		v.Local.sTemp2.Set(v.DataTable.openOrderdLinesDT(v.Local.iCnt).date_order!FieldVal)
+
+		f.Intrinsic.Control.If(v.Local.sTemp1, !=, "")
+		f.Intrinsic.Control.AndIf(v.Local.sTemp2, !=, "")
+			f.Intrinsic.Date.ConvertDString(v.Local.sTemp1, "MM/DD/YYYY", v.Local.dDateTemp1)
+			f.Intrinsic.Date.ConvertDString(v.Local.sTemp2, "MM/DD/YYYY", v.Local.dDateTemp2)
+			f.Intrinsic.Date.DateDiff("d", v.Local.dDateTemp2, v.Local.dDateTemp1, v.Local.iRet)		
+			v.Local.sTemp.Set(v.Local.iRet.String)
+		f.Intrinsic.Control.Else
+			v.Local.sTemp.Set("")
+		f.Intrinsic.Control.EndIf
+		f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "turnaround", v.Local.sTemp)
+		
+		'Iddle Day		
+		f.Intrinsic.Control.If(v.DataTable.openOrderdLinesDT(v.Local.iCnt).Date_Sequence!FieldVal, !=, "")
+			v.Local.sTemp1.Set(v.DataTable.openOrderdLinesDT(v.Local.iCnt).Date_Sequence!FieldVal)
+		f.Intrinsic.Control.Else
+			v.Local.sTemp1.Set(v.Ambient.Date.PSQLFriendly)
+		f.Intrinsic.Control.EndIf
+		
+		
+		v.Local.sTemp2.Set(v.DataTable.openOrderdLinesDT(v.Local.iCnt).date_order!FieldVal)
+		
+		f.Intrinsic.Control.If(v.Local.sTemp1, !=, "")
+		f.Intrinsic.Control.AndIf(v.Local.sTemp2, !=, "")
+			f.Intrinsic.Date.ConvertDString(v.Local.sTemp1, "MM/DD/YYYY", v.Local.dDateTemp1)
+			f.Intrinsic.Date.ConvertDString(v.Local.sTemp2, "MM/DD/YYYY", v.Local.dDateTemp2)
+			f.Intrinsic.Date.DateDiff("d", v.Local.dDateTemp2, v.Local.dDateTemp1, v.Local.iRet)		
+		f.Intrinsic.Control.Else
+			v.Local.iRet.Set(0)
+		f.Intrinsic.Control.EndIf
+		f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "idle_Days", v.Local.iRet)
+		
+		'Days Late
+		f.Intrinsic.Control.If(v.DataTable.openOrderdLinesDT(v.Local.iCnt).date_ship!FieldVal, !=, "")
+			v.Local.sTemp1.Set(v.DataTable.openOrderdLinesDT(v.Local.iCnt).date_ship!FieldVal)
+		f.Intrinsic.Control.Else
+			v.Local.sTemp1.Set(v.Ambient.Date.PSQLFriendly)
+		f.Intrinsic.Control.EndIf
+		'v.Local.sTemp1.Set(v.DataTable.openOrderdLinesDT(v.Local.iCnt).date_ship!FieldVal)
+		v.Local.sTemp2.Set(v.DataTable.openOrderdLinesDT(v.Local.iCnt).workOrderDueDate!FieldVal)
+			
+		f.Intrinsic.Control.If(v.Local.sTemp1, !=, "")
+		f.Intrinsic.Control.AndIf(v.Local.sTemp2, !=, "")
+			f.Intrinsic.Date.ConvertDString(v.Local.sTemp1, "MM/DD/YYYY", v.Local.dDateTemp1)
+			
+			f.Intrinsic.Date.ConvertDString(v.Local.sTemp2, "MM/DD/YYYY", v.Local.dDateTemp2)
+			'check the format for full date.
+			
+			f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "workOrderDueDate", v.Local.dDateTemp2)
+			f.Intrinsic.Date.DateDiff("d", v.Local.dDateTemp2, v.Local.dDateTemp1, v.Local.iRet)		
+			v.Local.sTemp.Set(v.Local.iRet.String)
+			v.Local.sTemp.Set(v.Local.iRet.String)
+		f.Intrinsic.Control.Else
+			v.Local.sTemp.Set("")
+		f.Intrinsic.Control.EndIf
+		'f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "turnaround", v.Local.sTemp)
+		f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "Days_Late", v.Local.sTemp)
+
+		
+		'WO DUE DATE
+		f.Intrinsic.String.Split(v.DataTable.openOrderdLinesDT(v.Local.iCnt).WORKORDERDUEDATE!FieldValTrim, " ", v.Local.sTemp)
+		f.Intrinsic.Control.If(v.Local.sTemp(0), !=, "")
+			f.Intrinsic.Control.If(v.Local.sTemp(0).Length, =, 6)
+				f.Intrinsic.Date.ConvertDString(v.Local.sTemp(0), "MM/DD/YYYY", v.Local.dDateTemp1)
+				'v.Local.sSecondTemp
+				f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "WORKORDERDUEDATE", v.Local.dDateTemp1)
+				f.Intrinsic.String.Split(v.DataTable.openOrderdLinesDT(v.Local.iCnt).WORKORDERDUEDATE!FieldValTrim, " ", v.Local.sSecondTemp)
+				f.Intrinsic.Control.If(v.Local.sSecondTemp(0), !=, "")
+					f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "WORKORDERDUEDATE", v.Local.sSecondTemp(0))
+				f.Intrinsic.Control.EndIf		
+				v.Local.sTemp.Redim(0,0)
+			f.Intrinsic.Control.Else
+				f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "WORKORDERDUEDATE", v.Local.sTemp(0))
+			f.Intrinsic.Control.EndIf			
+		f.Intrinsic.Control.Else
+			'f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "WORKORDERDUEDATE", v.Local.sTemp(0))
+		f.Intrinsic.Control.EndIf		
+		
+		v.Local.sTemp.Redim(0,0)
+		
+		'QtyCheck
+		f.Intrinsic.Control.If(v.DataTable.openOrderdLinesDT(v.Local.iCnt).qty_ordered!FieldValTrim, =, v.DataTable.openOrderdLinesDT(v.Local.iCnt).workOrderQTY!FieldValTrim)
+			f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "qtyCheck", "1")
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Math.Add(v.Local.iMultipleIssues, 1, v.Local.iMultipleIssues)
+		f.Intrinsic.Control.EndIf
+		
+		'dateCheck
+		f.Intrinsic.Control.If(v.DataTable.openOrderdLinesDT(v.Local.iCnt).date_due!FieldValTrim, =, v.DataTable.openOrderdLinesDT(v.Local.iCnt).workOrderDueDate!FieldValTrim)
+			f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "dateCheck", "1")
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Math.Add(v.Local.iMultipleIssues, 1, v.Local.iMultipleIssues)
+		f.Intrinsic.Control.EndIf
+		
+		'partCheck
+		f.Intrinsic.Control.If(v.DataTable.openOrderdLinesDT(v.Local.iCnt).part!FieldValTrim, =, v.DataTable.openOrderdLinesDT(v.Local.iCnt).WO_Part!FieldValTrim)
+			f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "partCheck", "1")
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Math.Add(v.Local.iMultipleIssues, 1, v.Local.iMultipleIssues)
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.DataTable.SetValue("openOrderdLinesDT", v.Local.iCnt, "multipleIssues", v.Local.iMultipleIssues)
+	f.Intrinsic.Control.Next(v.Local.iCnt)
+
+	f.Intrinsic.Control.If(v.DataView.openOrderdLinesDT!openOrderdLinesDV.Exists)
+		f.Data.DataView.Close("openOrderdLinesDT", "openOrderdLinesDV")
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataView.Create("openOrderdLinesDT", "openOrderdLinesDV", 22, "Record_No = '001'", "")
+	f.Data.DataView.ToDataTableDistinct("openOrderdLinesDT", "openOrderdLinesDV", "dictionariesDT", "Order_No*!*turnaround*!*idle_Days*!*Days_Late")
+	f.Data.Dictionary.CreateFromDataTable("TurnaroundDict", "dictionariesDT", "Order_No", "turnaround")
+	f.Data.Dictionary.CreateFromDataTable("idle_DaysDict", "dictionariesDT", "Order_No", "idle_Days")
+	f.Data.Dictionary.CreateFromDataTable("Days_LateDict", "dictionariesDT", "Order_No", "Days_Late")
+	
+	f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "TurnaroundDict", "Order_No", "turnaround")
+	f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "idle_DaysDict", "Order_No", "idle_Days")
+	f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "Days_LateDict", "Order_No", "Days_Late")
+	
+	f.Data.Dictionary.Close("TurnaroundDict")
+	f.Data.Dictionary.Close("idle_DaysDict")
+	f.Data.Dictionary.Close("Days_LateDict")
+	f.Data.DataTable.Close("dictionariesDT")
+	f.Data.DataView.Close("openOrderdLinesDT", "openOrderdLinesDV")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.addDaysCalc.End
+
+Program.Sub.addShipmentInfo.Start
+v.Local.sSQL.Declare
+v.Local.sFilter.Declare
+v.Local.sTemp.Declare
+v.Local.iCnt.Declare
+
+f.Intrinsic.Control.Try
+	'creates datatable from shipment lines DT for shipment info.
+	f.ODBC.Connection!con.OpenCompanyConnection(999999999)
+		'f.Data.DataTable.CreateFromSQL("shipmentLineDT", "con", "Select order_no, order_suffix, order_rec,  cast(price as float) as price, date_ship from V_shipment_lines")
+		
+		f.Data.DataTable.CreateFromSQL("dateShipOpenDT", "con", "select Order_No, left(Order_rec, 3) as order_rec,  date_ship, order_no+left(Order_rec, 3) as priceFreight, QTY_Shipped as QUANTITY_SHIPPED, order_no as SHIP_VIA, 'H' as typeOrder2 from V_shipment_Lines")
+		f.Data.DataTable.CreateFromSQL("dateShipHistDT", "con", "select Order_No, left(Order_line, 3) as order_rec, date_shipped as date_ship, order_no+left(Order_line, 3) as priceFreight, QTY_Shipped as QUANTITY_SHIPPED, order_no as SHIP_VIA, 'H' as typeOrder2 from v_order_hist_line")
+		f.Data.DataTable.CreateFromSQL("shipViaShipDT", "con", "select Order_No, SHIP_VIA from V_SHIPMENT_HEADER")
+		f.Data.DataTable.CreateFromSQL("shipViaHistDT", "con", "select Order_No, SHIP_VIA from V_Order_Hist_Head")
+		f.Data.DataTable.Merge("shipViaHistDT", "shipViaShipDT", false, 2)
+		f.Data.Dictionary.CreateFromDataTable("shipviaDict", "shipViaShipDT", "Order_No", "SHIP_VIA", 4)
+		
+		f.Data.DataTable.Close("shipViaHistDT")
+		f.Data.DataTable.Close("shipViaShipDT")
+		
+		f.Data.DataTable.Merge("dateShipHistDT", "dateShipOpenDT", false, 2)
+		f.Data.DataTable.Close("dateShipHistDT")
+		
+		f.Data.Dictionary.SetDefaultReturn("shipviaDict", " ")
+		f.Data.DataTable.FillFromDictionary("dateShipOpenDT", "shipviaDict", "SHIP_VIA", "SHIP_VIA")
+		f.Data.Dictionary.Close("shipviaDict")
+	'missing this	S.price as priceFreight
+		
+		'f.Data.DataTable.CreateFromSQL("PriceHist", "con", "select order_no+left(Order_line, 3) as order_rec, EXTENSION_ORDER as priceFreight  from v_order_hist_line where Order_Line = 8000")
+		f.Data.DataTable.CreateFromSQL("PriceShip", "con", "Select Order_no+'001' as Order_no, cast(extension_order as float) as priceFreight from Order_Hist_Line where Order_Line = '8000' ")
+		'f.Data.DataTable.Merge("PriceHist", "PriceShip", false, 2)
+		'f.Data.DataTable.Close("PriceHist")
+		f.Data.Dictionary.CreateFromDataTable("FreighPriceDict", "PriceShip", "Order_no", "priceFreight")
+		f.Data.DataTable.Close("PriceShip")
+		
+		f.Data.Dictionary.SetDefaultReturn("FreighPriceDict", "0.00")
+		f.Data.DataTable.FillFromDictionary("dateShipOpenDT", "FreighPriceDict", "priceFreight")
+		f.Data.Dictionary.Close("FreighPriceDict")
+	
+	f.ODBC.Connection!con.Close
+	'joins all the order lines DT to the matching shipment info.
+	f.Data.Linq.Join("rightjoin", "datatable", "dateShipOpenDT*!*S", "datatable", "jobDetailJoinDT*!*L", "S.order_no = L.order_no and S.order_rec = L.record_no", "L.CUSTOMER_ID*!*L.customer*!*L.billed_to*!*L.shipped_to*!*L.clinician*!*L.CLINICIAN_EMAIL*!*L.order_no*!*L.record_no*!*L.customer_po*!*L.workOrderSuffix*!*L.inputGrade*!*L.patientName*!*L.part*!*L.description*!*L.product_Line*!*L.date_order*!*L.Date_Sequence*!*L.date_due*!*L.workOrderDueDate*!*L.woOHold*!*L.workOrderQTY*!*S.date_ship*!*L.turnaround*!*L.idle_Days*!*L.Days_Late*!*L.CurrentJobSeq*!*L.NextJobSeq*!*L.qty_ordered*!*L.unit_price*!*S.priceFreight*!*L.TypeOrder*!*L.Price*!*L.extension*!*L.tracking_no*!*L.WO_Part*!*L.Job*!*L.Suffix*!*S.QUANTITY_SHIPPED*!*L.COST_TOTAL*!*L.COST_LINE*!*L.QUANTITY_INVOICED*!*L.CUSTOMERDUEDATE*!*L.INVOICEDATE*!*S.SHIP_VIA*!*L.INVOICE*!*S.typeOrder2", "", "","L.order_no", "tmpOpenOrderdLinesDT", true)
+	
+	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "qtyCheck", "String", "0")
+	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "dateCheck", "String", "0")
+	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "partCheck", "String", "0")
+	f.Data.DataTable.AddColumn("tmpOpenOrderdLinesDT", "multipleIssues", "String", "0")
+
+	f.Data.Dictionary.Create("shipDicT")
+	f.Data.Dictionary.AddItem("shipDicT", "H", "H")
+'	f.Data.Dictionary.AddItem("shipDicT", " ", "O")
+'	f.Data.Dictionary.AddItem("shipDicT", "1900-01-01", "O")
+	f.Data.Dictionary.SetDefaultReturn("shipDicT", "O")
+	f.Data.DataTable.FillFromDictionary("tmpOpenOrderdLinesDT", "shipDicT", "typeOrder2", "typeOrder2")
+	f.Data.Dictionary.Close("shipDicT")
+	
+	'f.Data.DataTable.AddExpressionColumn("tmpOpenOrderdLinesDT", "OrderTyoe2", "String", "IsNull(date_ship, O, H )")
+	f.Data.DataTable.AddExpressionColumn("tmpOpenOrderdLinesDT", "Freight", "Float", "IsNull(priceFreight, 0.00)")
+	'f.Data.DataTable.AddExpressionColumn("tmpOpenOrderdLinesDT", "Freight", "Float", "priceFreight")
+	f.Data.DataTable.AddExpressionColumn("tmpOpenOrderdLinesDT", "Total", "Float", "Price+Freight")
+	f.Data.DataTable.AddExpressionColumn("tmpOpenOrderdLinesDT", "ORDERLINE", "String", "order_no+record_no")
+	
+	f.Data.DataTable.DeleteRow("openOrderdLinesDT")
+	f.Data.DataTable.AcceptChanges("openOrderdLinesDT")
+
+	f.Data.DataTable.Merge("tmpOpenOrderdLinesDT", "openOrderdLinesDT", false, 2)
+	f.Data.DataTable.Close("tmpOpenOrderdLinesDT")
+	f.Data.DataTable.AcceptChanges("openOrderdLinesDT")
+	'closes used datatables.
+		
+	f.Data.DataTable.Close("dateShipOpenDT")
+	f.Data.DataTable.Close("jobDetailJoinDT")
+	
+f.Intrinsic.Control.Catch
+
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.addShipmentInfo.End
+
+Program.Sub.Serialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+	'allOrdersDV.
+	gui.F_JobHistory.GsGcAllOrder.Serialize("allOrdersGV", v.Local.sSerialize)
+	f.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"allOrdersDV",5343,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+	'closedOrdersDV
+	gui.F_JobHistory.GsGcClosedOrder.Serialize("closedOrdersGV",V.Local.sSerialize)
+	f.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"closedOrdersDV",5343,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)	
+	'openOrdersGV
+	gui.F_JobHistory.GsGcOpenOrder.Serialize("openOrdersGV",V.Local.sSerialize)
+	f.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"openOrdersGV",5343,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+v.Local.sSerialize.Declare
+f.Intrinsic.Control.Try
+	'Delete old registry records
+	f.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"allOrdersDV",5343,0,5,"",V.Local.sSerialize)
+	f.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		f.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+		f.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 5343 And Seq < 1000;")
+		f.ODBC.Connection!common.Close
+	f.Intrinsic.Control.EndIf
+
+	'allOrdersDV
+	f.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"allOrdersDV",5343,1000,6,"",V.Local.sSerialize)
+	f.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.F_JobHistory.GsGcAllOrder.Deserialize(V.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+	'closedOrdersDV
+	f.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"closedOrdersDV",5343,1000,6,"",V.Local.sSerialize)
+	f.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.F_JobHistory.GsGcClosedOrder.Deserialize(V.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+	'openOrdersGV
+	f.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"openOrdersGV",5343,1000,6,"",V.Local.sSerialize)
+	f.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		Gui.F_JobHistory.GsGcOpenOrder.Deserialize(V.Local.sSerialize)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.If(v.ODBC.common.State, =, 1)
+		f.ODBC.Connection!common.Close
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.loadPictureLogo.Start
+f.Intrinsic.Control.Try
+	'Load the Logo at the top of dash and the Icon
+	v.Local.sIcon.Declare(String)
+	v.Local.sGssLogo.Declare(String)
+	
+	f.Intrinsic.String.Build("{0}\ART\gss2.ico", v.Caller.GlobalDir, v.Local.sIcon)
+	f.Intrinsic.String.Build("{0}\ART\GAB_GSS_Logo_Green_Dash.png", v.Caller.GlobalDir, v.Local.sGssLogo)
+	gui.F_JobHistory.picLogo.Picture(v.Local.sGssLogo)
+	gui.F_JobHistory..Icon(v.Local.sIcon)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadPictureLogo.End
+
+Program.Sub.CustomRowClick.Start
+v.Local.sParams.Declare
+v.Local.sSQL.Declare
+v.Local.sTemp.Declare
+v.Local.bEdit.Declare
+v.Local.sGCGV.Declare
+
+v.Local.iDayTrf.Declare
+v.Local.iMonthTrf.Declare
+v.Local.iYearTrf.Declare
+v.Local.sColumn.Declare
+v.Local.bOrderHist.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.String.UCase(v.Args.Column, v.Local.sColumn)
+	'Checks in which column the click occurred.
+	f.Intrinsic.Control.SelectCase(v.Local.sColumn)
+		'If clicked on Customer column, opens Customer Master.
+		f.Intrinsic.Control.Case("CUSTOMER")
+'			f.Intrinsic.Control.If(v.Screen.F_JobHistory!TabOpenOrders.TabIndex, =, 0)
+'				v.Local.sGCGV.Set("allOrdersDV")
+'			f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!TabOpenOrders.TabIndex, =, 1)
+'				v.Local.sGCGV.Set("openOrdersDV")
+'			f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!TabOpenOrders.TabIndex, =, 2)
+'				v.Local.sGCGV.Set("closedOrdersDV")
+'			f.Intrinsic.Control.EndIf
+			
+'			v.Local.sTemp.Set(v.DataView.openOrderdLinesDT![v.Local.sGCGV](v.Args.RowIndex).ORDER_NO!FieldValTrim)
+			v.Local.sTemp.Set(v.DataTable.openOrderdLinesDT(v.Args.RowIndex).ORDER_NO!FieldValTrim)
+			f.Intrinsic.String.Build("Select Customer from V_Order_Header where Order_No = '{0}'", v.Local.sTemp, v.Local.sSQL)
+			f.ODBC.Connection!con.OpenCompanyConnection(999999999)	
+				f.Data.DataTable.CreateFromSQL("singleCustomer", "con", v.Local.sSQL)
+					f.Intrinsic.Control.If(v.DataTable.singleCustomer.RowCount, =, 1)
+						v.Local.sTemp.Set(v.DataTable.singleCustomer(0).Customer!FieldVal)
+					f.Intrinsic.Control.EndIf
+				f.Data.DataTable.Close("singleCustomer")
+			f.ODBC.Connection!con.Close			
+			f.Intrinsic.String.Build("O!*!ZDR!*!{0}", v.Local.sTemp, v.Local.sParams)
+			f.Global.General.CallWrapperSync(100000, v.Local.sParams)
+			f.Intrinsic.Control.ExitSub
+		
+		'If clicked on Order_no column, Opens Sales Order Entry.
+		f.Intrinsic.Control.Case("ORDER_NO")	
+			f.Intrinsic.String.Build("Select Customer from V_Order_Header where Order_No = '{0}'", v.Args.CellValue.PSQLFriendly, v.Local.sSQL)
+			f.ODBC.Connection!con.OpenCompanyConnection(999999999)	
+				f.Data.DataTable.CreateFromSQL("singleCustomer", "con", v.Local.sSQL)
+					f.Intrinsic.Control.If(v.DataTable.singleCustomer.RowCount, =, 1)
+						v.Local.sTemp.Set(v.DataTable.singleCustomer(0).Customer!FieldVal)
+					f.Intrinsic.Control.Else
+						f.Intrinsic.String.Build("Select distinct customer from V_ORDER_HIST_HEAD where Order_No = '{0}'", v.Args.CellValue.PSQLFriendly, v.Local.sSQL)
+						f.Data.DataTable.CreateFromSQL("orderHistDT", "con", v.Local.sSQL)
+						f.Intrinsic.Control.If(v.DataTable.orderHistDT.RowCount, =, 1)
+							v.Local.sTemp.Set(v.DataTable.orderHistDT(0).Customer!FieldValTrim)
+							v.Local.bOrderHist.Set(true)
+						f.Intrinsic.Control.EndIf
+						f.Data.DataTable.Close("orderHistDT")
+					f.Intrinsic.Control.EndIf
+				f.Data.DataTable.Close("singleCustomer")
+			f.ODBC.Connection!con.Close	
+	
+			f.Intrinsic.Control.If(v.Local.bOrderHist)
+				f.Intrinsic.String.Build("{0}!*!{1}", v.Args.CellValue.PSQLFriendly, v.Local.sTemp, v.Local.sParams)
+				f.Global.General.CallwrapperAsync(7070 , v.Local.sParams)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.Control.If(v.Screen.F_JobHistory!optView.Value, =, "True")
+					f.Intrinsic.String.Build("{0}!*!V!*!{1}", v.Args.CellValue, v.Local.sTemp, v.Local.sParams)
+					f.Global.General.CallWrapperSync(200000, v.Local.sParams)
+				f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!optEdit.Value, =, "True")
+					f.Global.Security.CheckUserAccessIPM(527, 1, v.Local.bEdit)
+					f.Intrinsic.Control.If(v.Local.bEdit)
+						f.Intrinsic.String.Build("{0}!*!O!*!{1}", v.Args.CellValue, v.Local.sTemp, v.Local.sParams)
+						f.Global.General.CallWrapperSync(200000, v.Local.sParams)
+					f.Intrinsic.Control.EndIf	
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+			
+			
+			f.Intrinsic.Control.ExitSub
+			
+		'If clicked on Work Order, Opens Work Order Screen.
+		f.Intrinsic.Control.Case("WORKORDERSUFFIX")	
+		
+			v.Local.sTemp.Redim(0, 1)
+			f.Intrinsic.Control.If(v.Args.CellValue, =, "")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+'			f.Intrinsic.String.Split(v.Args.CellValue, "_", v.Local.sTemp)
+'			f.Intrinsic.String.Trim(v.Local.sTemp(0), v.Local.sTemp(0))
+'			f.Intrinsic.String.Trim(v.Local.sTemp(1), v.Local.sTemp(1))
+
+			f.Intrinsic.String.Right(v.Args.CellValue, 3, v.Local.sTemp(1))
+			f.Intrinsic.String.Left(v.Args.CellValue, 6, v.Local.sTemp(0))
+			
+			'Edit
+			f.Intrinsic.Control.If(v.Screen.F_JobHistory!optEdit.Value, =, "True")
+				f.Global.Security.CheckUserAccessIPM(527, 1, v.Local.bEdit)
+				f.Intrinsic.Control.If(v.Local.bEdit)
+					f.Intrinsic.String.Build("{0}!*!{1}!*!O", v.Local.sTemp(0), v.Local.sTemp(1), v.Local.sParams)
+					f.Global.General.CallWrapperSync(2009, v.Local.sParams)
+				f.Intrinsic.Control.Else
+					f.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A", v.Local.sTemp(0), v.Local.sTemp(1), v.Local.sParams)
+					f.Global.General.CallWrapperSync(450000, v.Local.sParams)
+				f.Intrinsic.Control.EndIf
+			'Issue
+			f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!optIssue.Value, =, "True")
+				f.Intrinsic.String.Build("{0}!*!{1}!*! !*! !*! !*! !*! ", v.Local.sTemp(0), v.Local.sTemp(1), v.Local.sParams)
+				f.Global.General.CallWrapperSync(450150, v.Local.sParams)
+				f.Global.General.CallWrapperSync(50,"JB0057")
+			f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!optWip.Value, =, "True")
+				f.Intrinsic.Date.Day(V.Ambient.Date,V.Local.iDayTrf)
+				f.Intrinsic.Date.Month(V.Ambient.Date,V.Local.iMonthTrf)
+				f.Intrinsic.Date.Year(V.Ambient.Date,V.Local.iYearTrf)
+				f.Intrinsic.String.Build("{0}!*!{1}!*!{2}!*!OS!*!!*!!*!!*!!*!!*!!*!{3}!*!{4}!*!16!*!03!*!02!*!!*!!*!!*!!*!!*!!*!!*!!*!!*!", v.Caller.CompanyCode, v.Caller.Terminal, v.Caller.Caller, v.Local.sTemp(0), v.Local.sTemp(1), v.Local.sParams)
+				f.Global.General.CallWrapperSync(2003, v.Local.sParams)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("7!*!{0}!*!{1}!*!A", v.Local.sTemp(0), v.Local.sTemp(1), v.Local.sParams)
+				f.Global.General.CallWrapperSync(450000, v.Local.sParams)
+			f.Intrinsic.Control.EndIf
+		
+			f.Intrinsic.Control.ExitSub
+		
+		'If clicked on Part, Opens Inventory Master.
+		f.Intrinsic.Control.Case("PART")	
+			f.Intrinsic.String.Build("Select part, location from V_INVENTORY_MSTR where Part = '{0}'", v.Args.CellValue.PSQLFriendly, v.Local.sSQL)
+			f.ODBC.Connection!con.OpenCompanyConnection(999999999)	
+				f.Data.DataTable.CreateFromSQL("singlePart", "con", v.Local.sSQL)
+					f.Intrinsic.Control.If(v.DataTable.singlePart.RowCount, =, 1)
+						v.Local.sTemp.Redim(0, 1)
+						v.Local.sTemp(0).Set(v.DataTable.singlePart(0).Part!FieldVal)
+						v.Local.sTemp(1).Set(v.DataTable.singlePart(0).Location!FieldVal)
+					f.Intrinsic.Control.EndIf
+				f.Data.DataTable.Close("singlePart")
+			f.ODBC.Connection!con.Close					
+			f.Intrinsic.String.Build("{0}!*!O!*!ZDR!*!ZDR!*!{1}!*!{2}", v.Caller.CompanyCode, v.Local.sTemp(0), v.Local.sTemp(1), v.Local.sParams)
+			f.Global.General.CallWrapperSync(3500, v.Local.sParams)
+			f.Intrinsic.Control.ExitSub
+		
+		'If clicked on Tracking_no, Opens a web browser for the tracking fedex website.
+		f.Intrinsic.Control.Case("TRACKING_NO")	
+			f.Intrinsic.String.Build("https://www.fedex.com/apps/fedextrack/?tracknumbers={0}", v.Args.CellValue, v.Local.sTemp)
+			f.Intrinsic.Task.ShellExec(0,"OPEN",v.Local.sTemp,"","",0)
+	f.Intrinsic.Control.EndSelect
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.CustomRowClick.End
+
+Program.Sub.createGridViews.Start
+f.Intrinsic.Control.Try
+	'Creates GridView for AllOrders. Loads the properties using the gridcontrol name and the gridview name
+	
+	f.Data.DataView.Create("openOrderdLinesDT", "allOrdersDV", 22, , "Order_No, Record_NO asc")
+	gui.F_JobHistory.GsGcAllOrder.AddGridviewFromDataview("allOrdersGV", "openOrderdLinesDT", "allOrdersDV")
+	gui.F_JobHistory.GsGcAllOrder.MainView("allOrdersGV")
+	f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "", passDT, "openOrderdLinesDT", passDV, "allOrdersDV", passedGC, "GsGcAllOrder", passedGV, "allOrdersGV")
+
+	f.Intrinsic.Control.CallSub(loadProperties, GsGcName, "GsGcAllOrder", GvName, "allOrdersGV")
+	f.Intrinsic.Control.CallSub(formatRowColor, passedDV, "allOrdersDV", passedGC, "GsGcAllOrder", passedGV, "allOrdersGV")
+
+	'Creates GridView for ClosedOrders. Loads the properties using the gridcontrol name and the gridview name
+	f.Data.DataView.Create("openOrderdLinesDT", "closedOrdersDV", 22, , "Order_No, Record_NO asc")
+	gui.F_JobHistory.GsGcClosedOrder.AddGridviewFromDataview("closedOrdersGV", "openOrderdLinesDT", "closedOrdersDV")
+	gui.F_JobHistory.GsGcClosedOrder.MainView("closedOrdersGV")
+	f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder2 = 'H'", passDT, "openOrderdLinesDT", passDV, "closedOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+	'f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder = 'H'", passDT, "openOrderdLinesDT", passDV, "closedOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+	'f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and isnull(date_ship, '') <> ''", passDT, "openOrderdLinesDT", passDV, "closedOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+	
+	f.Intrinsic.Control.CallSub(loadProperties, GsGcName, "GsGcClosedOrder", GvName, "closedOrdersGV")
+	f.Intrinsic.Control.CallSub(formatRowColor, passedDV, "closedOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+	
+	'Creates GridView for OpenOrders. Loads the properties using the gridcontrol name and the gridview name
+	f.Data.DataView.Create("openOrderdLinesDT", "openOrdersDV", 22, , "Order_No, Record_NO asc")
+	gui.F_JobHistory.GsGcOpenOrder.AddGridviewFromDataview("openOrdersGV", "openOrderdLinesDT", "openOrdersDV")
+	gui.F_JobHistory.GsGcOpenOrder.MainView("openOrdersGV")
+	f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder2 <> 'H' ", passDT, "openOrderdLinesDT", passDV, "openOrdersDV", passedGC, "GsGcOpenOrder", passedGV, "openOrdersGV")
+	'f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder = 'O'", passDT, "openOrderdLinesDT", passDV, "openOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+	'f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and isnull(date_ship, '') = ''", passDT, "openOrderdLinesDT", passDV, "openOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+
+	f.Intrinsic.Control.CallSub(loadProperties, GsGcName, "GsGcOpenOrder", GvName, "openOrdersGV")
+	f.Intrinsic.Control.CallSub(formatRowColor, passedDV, "openOrdersDV", passedGC, "GsGcOpenOrder", passedGV, "openOrdersGV")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.createGridViews.End
+
+Program.Sub.loadScreenDefaults.Start
+v.Local.dStartDate.Declare
+v.Local.iCnt.Declare
+v.Local.sTemp.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.Date.DateSubtractWorkdays(v.Ambient.Date, 90, 127, v.Local.dStartDate)
+	gui.F_JobHistory.dtpStartDate.Value(v.Local.dStartDate)
+	v.Global.dStartDate.Set(v.Local.dStartDate)
+	v.Global.dEndDate.Set(v.Screen.F_JobHistory!dtpEndDate.Value)
+	gui.F_JobHistory.optDateOrder.Value(true)
+	v.Global.sDateFieldTitle.Set("DATE_ORDER")
+	gui.F_JobHistory.optView.Value(true)
+	
+	f.ODBC.Connection!con.OpenCompanyConnection(999999999)
+		f.Data.DataTable.CreateFromSQL("customerListDT", "con", "select name_customer from V_Customer_Master order by Customer asc")
+		f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.customerListDT.RowCount--, 1)
+			gui.F_JobHistory.cboCustomer.AddItem(v.DataTable.customerListDT(v.Local.iCnt).Name_Customer!FieldValTrim)
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		f.Data.DataTable.Close("customerListDT")
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.loadScreenDefaults.End
+
+Program.Sub.applyFilter.Start
+v.Local.sFilter.Declare
+v.Local.sCustomer.Declare
+
+f.Intrinsic.Control.Try
+	F.Intrinsic.Control.If(v.Screen.F_JobHistory!cboCustomer.Value, != , "All Customers")
+		f.Intrinsic.String.Build("and Customer = '{0}'", v.Screen.F_JobHistory!cboCustomer.Value, v.Local.sCustomer)
+	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("{0} >= '{1}' and {0} <= '{2}' {3} {4}", v.Global.sDateFieldTitle, v.Screen.F_JobHistory!dtpStartDate.Value, v.Screen.F_JobHistory!dtpEndDate.Value, v.Args.passedTabFilter, v.Local.sCustomer, v.Local.sFilter)
+	
+	f.Data.DataView.SetFilter(v.Args.passDT, v.Args.passDV, v.Local.sFilter)
+	
+	f.Intrinsic.Control.CallSub(calcAverageNew, passedDV, v.Args.passDV)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.applyFilter.End
+
+Program.Sub.optDateOrder_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!optDateOrder.Value)
+		v.Global.sDateFieldTitle.Set("DATE_ORDER")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.optDateOrder_Click.End
+
+Program.Sub.optDateStarted_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!optDateStarted.Value)
+		v.Global.sDateFieldTitle.Set("DATE_SEQUENCE")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.optDateStarted_Click.End
+
+Program.Sub.optDateDue_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!optDateDue.Value)
+		v.Global.sDateFieldTitle.Set("DATE_DUE")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.optDateDue_Click.End
+
+Program.Sub.optDateShip_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!optDateShip.Value)
+		v.Global.sDateFieldTitle.Set("DATE_SHIP")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.optDateShip_Click.End
+
+Program.Sub.optDateWODue_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!optDateWODue.Value)
+		v.Global.sDateFieldTitle.Set("WORKORDERDUEDATE")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.optDateWODue_Click.End
+
+Program.Sub.chkShowFormat_Click.Start
+f.Intrinsic.Control.Try	
+	gui.F_JobHistory.progressBar1.Value(0)
+	gui.F_JobHistory.lblProgressBar.Caption("")
+	gui.F_JobHistory.frmProgressBar.Visible(True)
+	gui.F_JobHistory.progressBar1.Value(10)
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!chkShowFormat.Value, =, 1)
+		f.Intrinsic.Control.CallSub(formatRowColor, passedDV, "allOrdersDV", passedGC, "GsGcAllOrder", passedGV, "allOrdersGV")
+		gui.F_JobHistory.progressBar1.Value(40)
+		f.Intrinsic.Control.CallSub(formatRowColor, passedDV, "openOrdersDV", passedGC, "GsGcOpenOrder", passedGV, "openOrdersGV")
+		gui.F_JobHistory.progressBar1.Value(70)
+		f.Intrinsic.Control.CallSub(formatRowColor, passedDV, "closedOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+		gui.F_JobHistory.progressBar1.Value(100)
+	f.Intrinsic.Control.Else
+		gui.F_JobHistory.GsGcAllOrder.removestyleformatcondition("allOrdersGV",  "qtyCheck", "qty")
+		gui.F_JobHistory.GsGcOpenOrder.removestyleformatcondition("openOrdersGV",  "qtyCheck", "qty")
+		gui.F_JobHistory.GsGcClosedOrder.removestyleformatcondition("closedOrdersGV",  "qtyCheck", "qty")
+		gui.F_JobHistory.progressBar1.Value(30)
+		gui.F_JobHistory.GsGcAllOrder.removestyleformatcondition("allOrdersGV",  "dateCheck", "date")
+		gui.F_JobHistory.GsGcOpenOrder.removestyleformatcondition("openOrdersGV",  "dateCheck", "date")
+		gui.F_JobHistory.GsGcClosedOrder.removestyleformatcondition("closedOrdersGV",  "dateCheck", "date")
+		gui.F_JobHistory.progressBar1.Value(50)
+		gui.F_JobHistory.GsGcAllOrder.removestyleformatcondition("allOrdersGV",  "partCheck", "part")
+		gui.F_JobHistory.GsGcOpenOrder.removestyleformatcondition("openOrdersGV",  "partCheck", "part")
+		gui.F_JobHistory.GsGcClosedOrder.removestyleformatcondition("closedOrdersGV",  "partCheck", "part")
+		gui.F_JobHistory.progressBar1.Value(70)
+		gui.F_JobHistory.GsGcAllOrder.removestyleformatcondition("allOrdersGV",  "multipleIssues", "multiple")
+		gui.F_JobHistory.GsGcOpenOrder.removestyleformatcondition("openOrdersGV",  "multipleIssues", "multiple")
+		gui.F_JobHistory.GsGcClosedOrder.removestyleformatcondition("closedOrdersGV",  "multipleIssues", "multiple")
+		gui.F_JobHistory.progressBar1.Value(90)
+		gui.F_JobHistory.GsGcAllOrder.removestyleformatcondition("allOrdersGV",  "multipleIssues", "noIssue")
+		gui.F_JobHistory.GsGcOpenOrder.removestyleformatcondition("openOrdersGV",  "multipleIssues", "noIssue")
+		gui.F_JobHistory.GsGcClosedOrder.removestyleformatcondition("closedOrdersGV",  "multipleIssues", "noIssue")
+		gui.F_JobHistory.progressBar1.Value(100)
+	f.Intrinsic.Control.EndIf
+	gui.F_JobHistory.frmProgressBar.Visible(False)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.chkShowFormat_Click.End
+
+Program.Sub.optView_Click.Start
+Program.Sub.optView_Click.End
+
+Program.Sub.optEdit_Click.Start
+Program.Sub.optEdit_Click.End
+
+Program.Sub.optIssue_Click.Start
+Program.Sub.optIssue_Click.End
+
+Program.Sub.optWip2FG_Click.Start
+Program.Sub.optWip2FG_Click.End
+
+Program.Sub.cmdFilter_Click.Start
+v.Local.dCompareStartDate.Declare
+v.Local.dCompareEndDate.Declare
+f.Intrinsic.Control.Try
+	v.Local.dCompareStartDate.Set(v.Screen.F_JobHistory!dtpStartDate.Value)
+	v.Local.dCompareEndDate.Set(v.Screen.F_JobHistory!dtpEndDate.Value)
+
+	f.Intrinsic.Control.If(v.Local.dCompareStartDate, <, v.Global.dStartDate)
+		v.Global.dStartDate.Set(v.Local.dCompareStartDate)
+		f.Intrinsic.Control.If(v.Local.dCompareEndDate, >, v.Global.dEndDate)
+			v.Global.dEndDate.Set(v.Local.dCompareEndDate)
+		f.Intrinsic.Control.EndIf
+		
+		gui.F_JobHistory.chkShowFormat.Value(false)
+		gui.F_JobHistory.chkShowFormat.Enabled(false)
+		f.Intrinsic.Control.CallSub(refresh)	
+		f.Intrinsic.Control.CallSub(formatRowColor)
+	f.Intrinsic.Control.ElseIf(v.Local.dCompareStartDate, <, v.Global.dStartDate)
+		v.Global.dEndDate.Set(v.Local.dCompareEndDate)
+		f.Intrinsic.Control.If(v.Local.dCompareEndDate, >, v.Global.dEndDate)
+			v.Global.dStartDate.Set(v.Local.dCompareStartDate)
+		f.Intrinsic.Control.EndIf
+		
+		gui.F_JobHistory.chkShowFormat.Value(false)
+		gui.F_JobHistory.chkShowFormat.Enabled(false)
+		f.Intrinsic.Control.CallSub(refresh)	
+		f.Intrinsic.Control.CallSub(formatRowColor)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Control.If(v.Screen.F_JobHistory!TabOpenOrders.Tab, =, 0)
+			f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "", passDT, "openOrderdLinesDT", passDV, "allOrdersDV", passedGC, "GsGcAllOrder", passedGV, "allOrdersGV")
+		f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!TabOpenOrders.Tab, =, 1)
+			f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder2 <> 'H'", passDT, "openOrderdLinesDT", passDV, "openOrdersDV", passedGC, "GsGcOpenOrder", passedGV, "openOrdersGV")
+		f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!TabOpenOrders.Tab, =, 2)
+			f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder2 = 'H'", passDT, "openOrderdLinesDT", passDV, "closedOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+		f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.EndIf
+	
+	'f.Intrinsic.UI.Msgbox("Done")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdFilter_Click.End
+
+Program.Sub.formatRowColor.Start
+v.Local.sTemp.Declare
+v.Local.iCnt.Declare
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!chkShowFormat.Value, =, 1)
+		gui.F_JobHistory.[v.Args.passedGC].AddStyleFormatCondition(v.Args.passedGV, "qtyCheck", "qty", "EQUAL", 0)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "qtyCheck", "qty", "ApplyToRow", true)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "qtyCheck", "qty", "backcolor", "LightPink")
+		
+		gui.F_JobHistory.[v.Args.passedGC].AddStyleFormatCondition(v.Args.passedGV, "dateCheck", "date", "EQUAL", 0)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "dateCheck", "date", "ApplyToRow", true)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "dateCheck", "date", "backcolor", "Plum")
+	
+		gui.F_JobHistory.[v.Args.passedGC].AddStyleFormatCondition(v.Args.passedGV, "partCheck", "part", "EQUAL", 0)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "partCheck", "part", "ApplyToRow", true)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "partCheck", "part", "backcolor", "LightYellow")
+		
+		gui.F_JobHistory.[v.Args.passedGC].AddStyleFormatCondition(v.Args.passedGV, "multipleIssues", "multiple", "Greater", 1)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "multipleIssues", "multiple", "ApplyToRow", true)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "multipleIssues", "multiple", "backcolor", "Red")
+		
+		gui.F_JobHistory.[v.Args.passedGC].AddStyleFormatCondition(v.Args.passedGV, "multipleIssues", "noIssue", "EQUAL", 0)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "multipleIssues", "noIssue", "ApplyToRow", true)
+		gui.F_JobHistory.[v.Args.passedGC].SetStyleFormatConditionProperty(v.Args.passedGV,  "multipleIssues", "noIssue", "backcolor", "Lime")	
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.formatRowColor.End
+
+Program.Sub.picLogo_DblClick.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Task.ShellExec(0,"Open","http://www.globalshopsolutions.com/login-customer","","",0)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.picLogo_DblClick.End
+
+Program.Sub.CheckPermissions.Start
+f.Intrinsic.Control.Try
+	v.Local.bEditInventory.Declare
+	v.Local.bEditWO.Declare
+	v.Local.bEditPO.Declare
+	v.Local.bEditSO.Declare
+	V.Local.bIssueGrp.Declare
+	V.Local.bWiptoFG.Declare	
+	
+	'Check if any of the menu items have edit permissions
+	Function.Global.Security.CheckUserAccessIPM(371,0,v.Local.bEditInventory)
+	Function.Global.Security.CheckUserAccessIPM(527,1,v.Local.bEditWO)
+	Function.Global.Security.CheckUserAccessIPM(265,1,v.Local.bEditPO)
+	Function.Global.Security.CheckUserAccessIPM(132,1,v.Local.bEditSO)
+	
+	F.Intrinsic.Control.If(V.Local.bEditInventory,=,True,or,v.Local.bEditWO,=,True,v.Local.bEditPO,=,True,v.Local.bEditSO,=,True)
+		Gui.F_JobHistory.optEdit.Enabled(True)		
+	F.Intrinsic.Control.EndIf
+
+	Function.Global.Security.CheckUserAccessIPM(533,0,v.Local.bIssueGrp)
+	F.Intrinsic.Control.If(v.Local.bIssueGrp,=,True)
+		Gui.F_JobHistory.optIssue.Enabled(True)
+	F.Intrinsic.Control.EndIf
+
+	Function.Global.Security.CheckUserAccessIPM(544,0,v.Local.bWiptoFG)
+	F.Intrinsic.Control.If(v.Local.bWiptoFG,=,True)
+		Gui.F_JobHistory.optWip2FG.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.CheckPermissions.End
+
+Program.Sub.SetContextMenus.Start
+v.Local.bEditSO.Declare	
+v.Local.bEditWO.Declare
+
+f.Intrinsic.Control.Try
+	Gui.F_JobHistory..ContextMenuCreate("ctxAll")
+	Gui.F_JobHistory.GsGcAllOrder.ContextMenuAttach("ctxAll")
+	Gui.F_JobHistory..ContextMenuAddItem("ctxAll","Refresh",0,"Refresh")
+	Gui.F_JobHistory..ContextMenuAddItem("ctxAll","Export",0,"Export")		
+	Gui.F_JobHistory..ContextMenuAddItem("ctxAll","ResetColumns",0,"Reset Columns")
+	Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxAll","Refresh","MenuClickRefresh")
+	Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxAll","Export","MenuClickExport")
+	Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxAll","ResetColumns","MenuClickResetColumns")
+		
+	Gui.F_JobHistory..ContextMenuCreate("ctxOpen")
+	gui.F_JobHistory.GsGcOpenOrder.ContextMenuAttach("ctxOpen")
+	Gui.F_JobHistory..ContextMenuAddItem("ctxOpen","Refresh",0,"Refresh")
+	Gui.F_JobHistory..ContextMenuAddItem("ctxOpen","Export",0,"Export")		
+	Gui.F_JobHistory..ContextMenuAddItem("ctxOpen","ResetColumns",0,"Reset Columns")
+	Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxOpen","Refresh","MenuClickRefresh")
+	Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxOpen","Export","MenuClickExport")
+	Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxOpen","ResetColumns","MenuClickResetColumns")
+	
+	Gui.F_JobHistory..ContextMenuCreate("ctxPastDue")
+	Gui.F_JobHistory.GsGcClosedOrder.ContextMenuAttach("ctxPastDue")
+	Gui.F_JobHistory..ContextMenuAddItem("ctxPastDue","Refresh",0,"Refresh")
+	Gui.F_JobHistory..ContextMenuAddItem("ctxPastDue","Export",0,"Export")		
+	Gui.F_JobHistory..ContextMenuAddItem("ctxPastDue","ResetColumns",0,"Reset Columns")
+	Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxPastDue","Refresh","MenuClickRefresh")
+	Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxPastDue","Export","MenuClickExport")
+	Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxPastDue","ResetColumns","MenuClickResetColumns")
+		
+	Function.Global.Security.CheckUserAccessIPM(132,1,v.Local.bEditSO)
+	f.Intrinsic.Control.If(v.Local.bEditSO)
+		Gui.F_JobHistory..ContextMenuAddItem("ctxAll","NewSO",0,"New SO")
+		Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxAll","NewSO","MenuClickNewSO")
+		Gui.F_JobHistory..ContextMenuAddItem("ctxOpen","NewSO",0,"New SO")
+		Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxOpen","NewSO","MenuClickNewSO")
+		Gui.F_JobHistory..ContextMenuAddItem("ctxPastDue","NewSO",0,"New SO")
+		Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxPastDue","NewSO","MenuClickNewSO")
+	f.Intrinsic.Control.EndIf	
+	
+	Function.Global.Security.CheckUserAccessIPM(527,1,v.Local.bEditWO)
+	f.Intrinsic.Control.If(v.Local.bEditWO)
+		Gui.F_JobHistory..ContextMenuAddItem("ctxAll","NewWO",0,"New WO")
+		Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxAll","NewWO","MenuClickNewWO")
+		Gui.F_JobHistory..ContextMenuAddItem("ctxOpen","NewWO",0,"New WO")
+		Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxOpen","NewWO","MenuClickNewWO")
+		Gui.F_JobHistory..ContextMenuAddItem("ctxPastDue","NewWO",0,"New WO")
+		Gui.F_JobHistory..ContextMenuSetItemEventHandler("ctxPastDue","NewWO","MenuClickNewWO")		
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenus.End
+
+Program.Sub.MenuClickRefresh.Start
+f.Intrinsic.Control.Try
+	F.Intrinsic.Control.CallSub(refresh)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.MenuClickRefresh.End
+
+Program.Sub.MenuClickExport.Start
+v.Local.sFileExport.Declare
+v.Local.bExcel.Declare
+v.Local.bFileLocked.Declare
+v.Local.sMsg.Declare
+v.Local.sControl.Declare
+v.Local.sGV.Declare
+v.Local.bExists.Declare
+f.Intrinsic.Control.Try	
+	f.Intrinsic.Control.SelectCase(V.Args.MenuName)
+		f.Intrinsic.Control.Case("CTXALL")
+			v.Local.sControl.Set("GsGcAllOrder")
+			'v.Local.sGV.Set("GV")
+		f.Intrinsic.Control.Case("CTXPASTDUE")
+			v.Local.sControl.Set("GsGcClosedOrder")
+		f.Intrinsic.Control.Case("CTXOPEN")
+			v.Local.sControl.Set("GsGcOpenOrder")
+	f.Intrinsic.Control.EndSelect
+	
+	f.Intrinsic.String.Build("{0}\CUSTOM\GCG_5543", v.Caller.GlobalDir, v.Local.sFileExport)
+	f.Intrinsic.File.DirExists(v.Local.sFileExport, v.Local.bExists)
+	
+	f.Intrinsic.Control.If(v.Local.bExists.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sFileExport)
+	f.Intrinsic.Control.EndIf
+	
+	f.Automation.MSExcel.CheckPresence(v.Local.bExcel)
+	f.Intrinsic.Control.If(v.Local.bExcel)
+		f.Intrinsic.String.Build("{0}\GAB_5343_{1}_Export.xlsx", v.Local.sFileExport, v.Local.sControl, v.Local.sFileExport)
+		
+		f.Intrinsic.File.Exists(v.Local.sFileExport, v.Local.bExists)
+		f.Intrinsic.Control.If(v.Local.bExists.Not)
+			'f.Automation.MSExcel.CreateAppObject("excelObj")
+			f.Automation.MSExcel.WriteSpreadsheet(v.Local.sFileExport, "")
+		f.Intrinsic.Control.EndIf
+	
+	
+		f.Intrinsic.File.IsFileLocked(v.Local.sFileExport, v.Local.bFileLocked)
+		f.Intrinsic.Control.If(v.Local.bFileLocked)
+			f.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}", v.Ambient.NewLine, v.Local.sFileExport, v.Local.sMsg)
+			f.Intrinsic.UI.Msgbox(v.Local.sMsg,"File In Use")
+		f.Intrinsic.Control.Else
+			Gui.F_JobHistory.[v.Local.sControl].Export(v.Local.sFileExport,"xlsx")
+			f.Intrinsic.Task.ShellExec(0, "", v.Local.sFileExport, "", "", 1)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("{0}\GAB_5343_{1}_Export.csv", v.Local.sFileExport, v.Local.sControl, v.Local.sFileExport)
+		
+		f.Intrinsic.File.Exists(v.Local.sFileExport, v.Local.bExists)
+		f.Intrinsic.Control.If(v.Local.bExists.Not)
+			f.Intrinsic.File.String2File(v.Local.sFileExport, "")
+		f.Intrinsic.Control.EndIf		
+		
+		f.Intrinsic.File.IsFileLocked(v.Local.sFileExport, v.Local.bFileLocked)
+		f.Intrinsic.Control.If(v.Local.bFileLocked)
+			f.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}", v.Ambient.NewLine, v.Local.sFileExport, v.Local.sMsg)
+			f.Intrinsic.UI.Msgbox(v.Local.sMsg,"File In Use")
+		f.Intrinsic.Control.Else
+			Gui.F_JobHistory.[v.Local.sControl].Export(v.Local.sFileExport,"csv")
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Task.ShellExec(0,"",v.Local.sFileExport,"","",1)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExport.End
+
+Program.Sub.MenuClickResetColumns.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.SelectCase(V.Args.MenuName)
+		f.Intrinsic.Control.Case("CTXALL")
+			f.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"allOrdersDV",5343,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,"")
+		f.Intrinsic.Control.Case("CTXPASTDUE")
+			f.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"closedOrdersDV",5343,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,"")
+		f.Intrinsic.Control.Case("CTXOPEN")
+			f.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"openOrdersGV",5343,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,"")
+	f.Intrinsic.Control.EndSelect
+	
+	v.Global.bLoadData.Set(False)
+	f.Intrinsic.Control.CallSub(refresh)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.MenuClickResetColumns.End
+
+Program.Sub.MenuClickNewSO.Start
+v.Local.iRowCnt.Declare
+v.Local.iRowCnt2.Declare
+f.Intrinsic.Control.Try
+	f.ODBC.Connection!con.OpenCompanyConnection(999999999)
+		f.ODBC.Connection!con.ExecuteAndReturn("SELECT COUNT(*) FROM V_ORDER_HEADER;", v.Local.iRowCnt)
+					
+		gui.FrmOrderReview.tabSO.Enabled(False)
+		f.Global.General.CallWrapperSync(200000,"*!*ZDR*!*!*!N!*!*!*ZDR*!*")	
+		gui.FrmOrderReview.tabSO.Enabled(True)
+	
+		f.ODBC.Connection!con.ExecuteAndReturn("SELECT COUNT(*) FROM V_ORDER_HEADER;", v.Local.iRowCnt2)
+	
+		f.Intrinsic.Control.If(v.Local.iRowCnt, <>, v.Local.iRowCnt2)
+			f.Intrinsic.Control.CallSub(refresh)	
+		f.Intrinsic.Control.EndIf
+	f.ODBC.Connection!con.Close		
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.MenuClickNewSO.End
+
+Program.Sub.MenuClickNewWO.Start
+v.Local.iRowCnt.Declare
+v.Local.iRowCnt2.Declare
+v.Local.iPID.Declare
+v.Local.bPID.Declare
+f.Intrinsic.Control.Try	
+	f.ODBC.Connection!con.OpenCompanyConnection(999999999)
+		f.ODBC.Connection!con.ExecuteAndReturn("SELECT COUNT(*) FROM JOB_HEADER;",V.Local.iRowCnt)
+	
+		gui.FrmOrderReview.tabSO.Enabled(False)
+		f.Global.General.LaunchMenuTask(527,2,V.Local.iPID)
+		f.Intrinsic.Task.PIDRunning(V.Local.iPID,V.Local.bPID)
+		f.Intrinsic.Control.DoUntil(V.Local.bPID,=,False)
+		f.Intrinsic.UI.SleepMS(10)
+		f.Intrinsic.Task.PIDRunning(V.Local.iPID,V.Local.bPID)
+		f.Intrinsic.Control.Loop
+		gui.FrmOrderReview.tabSO.Enabled(True)
+	
+		f.ODBC.Connection!con.ExecuteAndReturn("SELECT COUNT(*) FROM JOB_HEADER;",V.Local.iRowCnt2)
+	
+		f.Intrinsic.Control.If(V.Local.iRowCnt,<>,V.Local.iRowCnt2)
+			f.Intrinsic.Control.CallSub(cmdrefresh_click)	
+		f.Intrinsic.Control.EndIf		
+	f.ODBC.Connection!con.Close	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.MenuClickNewWO.End
+
+Program.Sub.refresh.Start
+f.Intrinsic.Control.Try
+	gui.F_JobHistory.frmProgressBar.Enabled(True)
+	gui.F_JobHistory.frmProgressBar.Visible(True)
+	gui.F_JobHistory.frmFilterOptions.Enabled(False)
+	gui.F_JobHistory.frmFilterOptions.Visible(False)
+	gui.F_JobHistory.TabOpenOrders.Visible(False)
+	gui.F_JobHistory.progressBar1.Value(10)
+	gui.F_JobHistory.lblProgressBar.Caption("Loading Sales Orders Data:")
+	f.Intrinsic.Control.CallSub(createOrderLines)
+	f.Intrinsic.Control.If(v.Global.bNotEmpty)
+		gui.F_JobHistory.progressBar1.Value(40)
+		gui.F_JobHistory.lblProgressBar.Caption("Loading Work Orders Data:")
+		f.Intrinsic.Control.CallSub(createWorkOderSuffix)
+		gui.F_JobHistory.progressBar1.Value(70)
+		gui.F_JobHistory.lblProgressBar.Caption("Loading Shipping Data:")
+		f.Intrinsic.Control.CallSub(addShipmentInfo)
+		gui.F_JobHistory.progressBar1.Value(80)
+		gui.F_JobHistory.lblProgressBar.Caption("Loading Patient's Data:")
+		f.Intrinsic.Control.CallSub(createDictionaries)
+		gui.F_JobHistory.progressBar1.Value(90)
+		gui.F_JobHistory.lblProgressBar.Caption("Getting Current and Next Steps:")
+		f.Intrinsic.Control.CallSub(getSequences)
+	f.Intrinsic.Control.EndIf
+	
+	'New Code for Joey.
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!TabOpenOrders.Tab, =, 0)
+		f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "", passDT, "openOrderdLinesDT", passDV, "allOrdersDV", passedGC, "GsGcAllOrder", passedGV, "allOrdersGV")
+	f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!TabOpenOrders.Tab, =, 1)
+		f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder2 <> 'H'", passDT, "openOrderdLinesDT", passDV, "openOrdersDV", passedGC, "GsGcOpenOrder", passedGV, "openOrdersGV")
+	f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!TabOpenOrders.Tab, =, 2)
+		f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder2 = 'H'", passDT, "openOrderdLinesDT", passDV, "closedOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+	f.Intrinsic.Control.EndIf	
+		
+	gui.F_JobHistory.progressBar1.Value(100)
+	gui.F_JobHistory.TabOpenOrders.Visible(True)
+	gui.F_JobHistory.frmProgressBar.Enabled(False)
+	gui.F_JobHistory.frmProgressBar.Visible(False)
+	gui.F_JobHistory.frmFilterOptions.Enabled(True)
+	gui.F_JobHistory.frmFilterOptions.Visible(True)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.refresh.End
+
+Program.Sub.calcAverageNew.Start
+v.Local.fTurnaround.Declare
+v.Local.fIddleDays.Declare
+v.Local.fDaysLate.Declare
+v.Local.fPrice.Declare
+v.Local.fFreight.Declare
+v.Local.fTotal.Declare
+
+f.Intrinsic.Control.Try
+
+	f.Data.DataView.ToDataTable("openOrderdLinesDT", v.Args.passedDV, "averageDT")	
+
+	'Average Turnaround of the Dataview
+	f.Data.DataTable.AddExpressionColumn("averageDT", "turnaroundAVRG", "long", "IIF(Turnaround = '', 0, Convert(Turnaround, 'System.Int32'))")
+	f.Data.DataTable.Compute("averageDT", "AVG(turnaroundAVRG)", "Turnaround <> ''", v.Local.fTurnaround)
+	gui.F_JobHistory.txtAvgTurnaround.Text(v.Local.fTurnaround)	
+
+	'Average idle_Days of the Dataview
+	f.Data.DataTable.AddExpressionColumn("averageDT", "idle_DaysAVRG", "long", "IIF(idle_Days = '', 0, Convert(idle_Days, 'System.Int32'))")
+	f.Data.DataTable.Compute("averageDT", "AVG(idle_DaysAVRG)", "idle_Days <> ''", v.Local.fIddleDays)
+	gui.F_JobHistory.txtAvgIddleDays.Text(v.Local.fIddleDays)
+
+	'Average Days_Late of the Dataview
+	f.Data.DataTable.AddExpressionColumn("averageDT", "Days_LateAVRG", "long", "IIF(Days_Late = '', 0, Convert(Days_Late, 'System.Int32'))")
+	f.Data.DataTable.Compute("averageDT", "AVG(Days_LateAVRG)", "Days_Late <> ''", v.Local.fDaysLate)
+	gui.F_JobHistory.txtAvgDaysLate.Text(v.Local.fDaysLate)
+	
+	'Sum Price of the Dataview
+	f.Data.DataTable.Compute("averageDT", "Sum(PRICE)", , v.Local.fPrice)
+	f.Intrinsic.Math.Round(v.Local.fPrice, 2, v.Local.fPrice)
+	gui.F_JobHistory.txtTotalPrice.Text(v.Local.fPrice)
+
+	'Sum Freight of the Dataview
+	f.Data.DataTable.Compute("averageDT", "Sum(FREIGHT)", , v.Local.fFreight)
+	f.Intrinsic.Math.Round(v.Local.fFreight, 2, v.Local.fFreight)
+	gui.F_JobHistory.txtTotalFreight.Text(v.Local.fFreight)
+
+	'Sum Total of the Dataview
+	f.Data.DataTable.Compute("averageDT", "Sum(TOTAL)", , v.Local.fTotal)
+	f.Intrinsic.Math.Round(v.Local.fTotal, 2, v.Local.fTotal)
+	gui.F_JobHistory.txtTotal.Text(v.Local.fTotal)
+
+	f.Data.DataTable.Close("averageDT")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.calcAverageNew.End
+
+Program.Sub.TabOpenOrders_Click.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!TabOpenOrders.Tab, =, 0)
+		f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "", passDT, "openOrderdLinesDT", passDV, "allOrdersDV", passedGC, "GsGcAllOrder", passedGV, "allOrdersGV")
+	f.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!TabOpenOrders.Tab, =, 1)
+		f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder2 <> 'H'", passDT, "openOrderdLinesDT", passDV, "openOrdersDV", passedGC, "GsGcOpenOrder", passedGV, "openOrdersGV")
+	F.Intrinsic.Control.ElseIf(v.Screen.F_JobHistory!TabOpenOrders.Tab, =, 2)
+		f.Intrinsic.Control.CallSub(applyFilter, passedTabFilter, "and TypeOrder2 = 'H'", passDT, "openOrderdLinesDT", passDV, "closedOrdersDV", passedGC, "GsGcClosedOrder", passedGV, "closedOrdersGV")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.TabOpenOrders_Click.End
+
+Program.Sub.getSequences.Start
+v.Local.iCnt.Declare
+v.Local.sFieldTitles.Declare
+v.Local.sSQL.Declare
+v.Local.sFilter.Declare
+v.Local.sJobSuffixSequence.Declare
+v.Local.sCurrentSeq.Declare
+v.Local.sNextSeq.Declare
+v.Local.sRet.Declare
+v.Local.bExist.Declare
+v.Local.sJobTest.Declare
+f.Intrinsic.Control.Try
+
+	f.Data.DataView.Create("openOrderdLinesDT", "openOrderdLinesDV", 22, "Job <> ''", "Job asc")
+	f.Data.DataView.ToDataTableDistinct("openOrderdLinesDT", "openOrderdLinesDV", "jobSuffixDT", "Job*!*Suffix*!*TypeOrder2")
+	f.Data.DataView.Create("jobSuffixDT", "jobSuffixDV", 22)
+	f.Data.DataView.ToString("jobSuffixDT", "jobSuffixDV", "Job", "_", "','", v.Local.sFieldTitles)
+	'f.Data.DataView.ToDataTableDistinct("openOrderdLinesDT", "openOrderdLinesDV", "jobDT", "workOrderSuffix", true)
+	'f.Data.DataTable.AddColumn("jobDT", "dicValue", "String", "Closed")
+	f.Data.Dictionary.Exists(histDict, v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist)
+		f.Data.Dictionary.Close("histDict")
+	f.Intrinsic.Control.EndIf
+	f.Data.Dictionary.CreateFromDataTable("histDict", "jobSuffixDT", "Job", "TypeOrder2")
+	
+	'f.Intrinsic.String.Replace(v.Local.sFieldTitles, "_", "", v.Local.sFieldTitles)
+	f.Data.DataView.Close("jobSuffixDT", "jobSuffixDV")
+	f.Data.DataTable.Close("jobSuffixDT")
+	
+	f.Data.Dictionary.Exists("CurrentSeq", v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist)
+		f.Data.Dictionary.Close("CurrentSeq")
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.Dictionary.Exists("NextSeq", v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist)
+		f.Data.Dictionary.Close("NextSeq")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.joinSeq.Exists)
+		f.Data.DataTable.Close("joinSeq")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.currentSeqDT.Exists)
+		f.Data.DataTable.Close("currentSeqDT")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.jobOperationsDT.Exists)
+		f.Data.DataTable.Close("jobOperationsDT")
+	f.Intrinsic.Control.EndIf
+	
+	'f.Data.Dictionary.Create("CurrentSeq")
+	'f.Data.Dictionary.Create("NextSeq")
+	
+	f.ODBC.Connection!con.OpenCompanyConnection(999999999)
+		'f.Intrinsic.String.Build("select job+suffix as WOSuff, min(seq) as FirstSeq from job_detail where flag_closed <> 'Y' and Job in ('{0}') group by job, suffix ", v.Local.sFieldTitles, v.Local.sSQL)
+		f.Intrinsic.String.Build("select job+suffix as WOSuff, min(seq) as FirstSeq from Job_Operations where flag_closed <> 'Y' and Job in ('{0}') group by job, suffix ", v.Local.sFieldTitles, v.Local.sSQL)
+	 	f.Data.DataTable.CreateFromSQL("currentSeqDT", "con", v.Local.sSQL)
+		f.Intrinsic.String.Build("Select Job+suffix as WOSuff, seq, lmo, description, part, flag_closed from Job_Operations where Job in ('{0}')", v.Local.sFieldTitles, v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("jobOperationsDT", "con", v.Local.sSQL)
+	f.ODBC.Connection!con.Close
+	f.Data.Linq.Join("leftjoin", "datatable", "currentSeqDT*!*C", "datatable", "jobOperationsDT*!*J", "C.WOSuff = J.WOSuff and C.FirstSeq = J.Seq", "C.WOSuff*!*C.FirstSeq*!*J.LMO*!*J.Part", "", "","","joinSeq", true)
+	
+	f.Data.DataTable.Close("currentSeqDT")
+	f.Data.DataTable.Close("jobOperationsDT")
+	
+	f.Intrinsic.Control.If(v.DataTable.joinSeq.RowCount, =, 0)
+		f.Data.DataTable.AddColumn("joinSeq", "Retvalue", "String")
+	f.Intrinsic.Control.Else
+	
+		f.Data.DataTable.AddExpressionColumn("joinSeq", "Retvalue", "String", "IIF(FirstSeq > '990000', 'Closed', IIF(LMO = 'M', 'IssueMaterial', Part)) ")
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.Dictionary.CreateFromDataTable("CurrentSeq", "joinSeq", "woSuff", "Retvalue")
+'	f.Data.DataTable.SetValueFormat("currentSeqDT", -1, "firstSeq", "firstSeq", "000000")
+'	f.Data.DataTable.AddExpressionColumn("firs")
+
+	
+''	'f.Intrinsic.String.Build("'{0}'", v.Local.sFieldTitles, v.Local.sFieldTitles)
+''	f.ODBC.Connection!con.OpenCompanyConnection(999999999)
+''		f.Intrinsic.String.Build("Select Job, suffix, seq, lmo, description, part, flag_closed from Job_Operations where Job in ('{0}')", v.Local.sFieldTitles, v.Local.sSQL)
+''		f.Data.DataTable.CreateFromSQL("jobOperationsDT", "con", v.Local.sSQL)
+''		'f.Intrinsic.String.Build("Select job + suffix as workOrderSuffix, Job, Suffix, Seq, Date_sequence, Sequence_key, Description,  flag_closed from Job_Detail where Job+Suffix in ('{0}') ", v.Local.sFieldTitles, v.Local.sSQL)
+''		'f.Data.DataTable.CreateFromSQL("jobDetailDT", "con", v.Local.sSQL)
+''	f.ODBC.Connection!con.Close
+''	'f.Data.DataView.Create("jobDetailDT", "jobSeqDV", 22)
+''	f.Data.DataView.Create("jobOperationsDT", "jobOperationsDV", 22, , "Job, Suffix, Seq asc")
+''	f.Data.DataView.ToDataTable("jobOperationsDT", "jobOperationsDV", "jobDetailDT")
+''	f.Data.DataView.Create("jobDetailDT", "jobSeqDV", 22)
+''	'f.Data.DataView.ToDataTableDistinct("jobDetailDT", "jobSeqDV", "jobSuffixDT", "Job*!*Suffix")
+''	f.Data.DataView.ToDataTableDistinct("jobOperationsDT", "jobOperationsDV", "jobSuffixDT", "Job*!*Suffix")
+''	f.Data.DataTable.AddColumn("jobSuffixDT", "TypeOrder",  "String")
+''	f.Data.DataTable.FillFromDictionary("jobSuffixDT", "histDict", "Job", "TypeOrder")
+''	
+''	f.Intrinsic.Control.For(v.Local.iCnt, 0, v.DataTable.jobSuffixDT.RowCount--, 1)
+
+''		 v.Local.sRet.Set("")
+''		f.Intrinsic.String.Build("Job = '{0}' and Suffix = '{1}' and flag_closed <> 'Y'", v.DataTable.jobSuffixDT(v.Local.iCnt).Job!FieldValTrim, v.DataTable.jobSuffixDT(v.Local.iCnt).Suffix!FieldValTrim, v.Local.sFilter)
+''		f.Data.DataView.SetFilter("jobDetailDT", "jobSeqDV", v.Local.sFilter)
+''		f.Data.DataView.SetSort("jobDetailDT", "jobSeqDV", "seq ASC")
+''		f.Intrinsic.String.Build("{0}{1}", v.DataTable.jobSuffixDT(v.Local.iCnt).Job!FieldValTrim, v.DataTable.jobSuffixDT(v.Local.iCnt).Suffix!FieldVal, v.Local.sJobSuffixSequence)
+'''		v.Local.sJobTest.Set(v.DataTable.jobSuffixDT(v.Local.iCnt).Job!FieldValTrim)
+'''		f.Intrinsic.Control.If(v.Local.sJobTest, =, "005888")
+'''		Function.Intrinsic.Debug.InvokeDebugger
+'''		Function.Intrinsic.Debug.Stop
+'''		
+'''		f.Intrinsic.Control.EndIf
+''		v.Local.sCurrentSeq.Set("")
+''		v.Local.sNextSeq.Set("")
+''		
+
+''		
+''			
+''		f.Intrinsic.Control.If(v.DataView.jobDetailDT!jobSeqDV.RowCount, >, 0)
+''		
+''			f.Intrinsic.String.Build("Job = '{0}' and suffix ='{1}' and Seq = '{2}' and Seq < '995000'", v.DataView.jobDetailDT!JobSeqDV(0).Job!FieldVal, v.DataView.jobDetailDT!JobSeqDV(0).Suffix!FieldVal, v.DataView.jobDetailDT!JobSeqDV(0).Seq!FieldVal, v.Local.sFilter)
+''			f.Data.DataView.SetFilter("jobOperationsDT", "jobOperationsDV", v.Local.sFilter)
+''			f.Data.DataView.SetSort("jobOperationsDT", "jobOperationsDV", "job ASC")	
+''			
+''			f.Intrinsic.Control.If(v.DataView.jobOperationsDT!jobOperationsDV.RowCount, >, 0)
+''				f.Intrinsic.Control.If(v.DataView.jobOperationsDT!jobOperationsDV(0).LMO!FieldValTrim, =, "M")
+''					v.Local.sCurrentSeq.Set("Issue Material")
+''				f.Intrinsic.Control.ElseIf(v.DataView.jobOperationsDT!jobOperationsDV(0).LMO!FieldValTrim, =, "L")
+''					v.Local.sCurrentSeq.Set(v.DataView.jobOperationsDT!jobOperationsDV(0).Part!FieldValTrim)
+''				f.Intrinsic.Control.Else
+''					v.Local.sCurrentSeq.Set(v.DataView.jobOperationsDT!jobOperationsDV(0).Description!FieldValTrim)
+''				f.Intrinsic.Control.EndIf
+''			f.Intrinsic.Control.Else
+''				v.Local.sCurrentSeq.Set("Closed")
+''								
+''			f.Intrinsic.Control.EndIf
+''			
+''			f.Intrinsic.String.Build("Job = '{0}' and suffix ='{1}' and Seq > '{2}' and Seq < '995000'", v.DataView.jobDetailDT!JobSeqDV(0).Job!FieldVal, v.DataView.jobDetailDT!JobSeqDV(0).Suffix!FieldVal, v.DataView.jobDetailDT!JobSeqDV(0).Seq!FieldVal, v.Local.sFilter)
+''			f.Data.DataView.SetFilter("jobOperationsDT", "jobOperationsDV", v.Local.sFilter)
+''			f.Data.DataView.SetSort("jobOperationsDT", "jobOperationsDV", "seq ASC")
+''			f.Intrinsic.Control.If(v.DataView.jobOperationsDT!jobOperationsDV.RowCount, >, 0)
+''			
+''				f.Intrinsic.Control.If(v.DataView.jobOperationsDT!jobOperationsDV(0).LMO!FieldValTrim, =, "M")
+''					v.Local.sNextSeq.Set("Issue Material")
+''				f.Intrinsic.Control.ElseIf(v.DataView.jobOperationsDT!jobOperationsDV(0).LMO!FieldValTrim, =, "L")
+''					v.Local.sNextSeq.Set(v.DataView.jobOperationsDT!jobOperationsDV(0).Part!FieldValTrim)
+''				f.Intrinsic.Control.Else
+''					v.Local.sNextSeq.Set(v.DataView.jobOperationsDT!jobOperationsDV(0).Description!FieldValTrim)
+''				f.Intrinsic.Control.EndIf
+''				
+''			f.Intrinsic.Control.Else
+''			
+''				v.Local.sNextSeq.Set("Closed")
+''				
+''			f.Intrinsic.Control.EndIf
+'''	SO 0005729; WO 005977		
+'''			f.Intrinsic.Control.If(v.DataView.jobDetailDT!jobSeqDV.RowCount, =, 0)
+'''				v.Local.sCurrentSeq.Set("Closed")
+'''				v.Local.sNextSeq.Set("Closed")
+'''			f.Intrinsic.Control.EndIf
+''			
+''			f.Intrinsic.Control.If(v.DataTable.jobSuffixDT(v.Local.iCnt).TypeOrder!FieldValTrim, =, "H")
+''				f.Intrinsic.String.Build("Select Distinct Order_no from Shipment_Header where Order_No = (Select top 1 Order_No from Order_To_Wo where Job = '{0}')", v.DataTable.jobSuffixDT(v.Local.iCnt).Job!FieldValTrim, v.Local.sSQL)
+''				f.ODBC.Connection!conSQL.OpenCompanyConnection
+''					f.ODBC.Connection!conSQL.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+''				f.ODBC.Connection!conSQL.Close
+''				
+''				f.Intrinsic.Control.If(v.Local.sRet.Trim, <>, "")
+''					v.Local.sCurrentSeq.Set("Shipped")
+''					v.Local.sNextSeq.Set("Closed")
+''				f.Intrinsic.Control.EndIf
+''				
+''				f.Intrinsic.String.Build("Select Distinct Order_no from Order_Hist_Head where Order_No = (Select top 1 Order_No from Order_To_Wo where Job = '{0}')", v.DataTable.jobSuffixDT(v.Local.iCnt).Job!FieldValTrim, v.Local.sSQL)
+''				f.ODBC.Connection!conSQL.OpenCompanyConnection
+''					f.ODBC.Connection!conSQL.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+''				f.ODBC.Connection!conSQL.Close
+''				
+''				f.Intrinsic.Control.If(v.Local.sRet.Trim, <>, "")
+''					v.Local.sCurrentSeq.Set("Invoiced")
+''					v.Local.sNextSeq.Set("Closed")
+''				f.Intrinsic.Control.EndIf
+''			f.Intrinsic.Control.EndIf
+''			
+''			f.Intrinsic.Control.If(v.Local.sCurrentSeq.Trim, =, "PARTS TRANSFERED FROM WIP")
+''				v.Local.sCurrentSeq.Set("WIP")
+''			f.Intrinsic.Control.EndIf
+''			
+''			f.Intrinsic.Control.If(v.Local.sNextSeq.Trim, =, "PARTS TRANSFERED FROM WIP")
+''				v.Local.sNextSeq.Set("WIP")
+''			f.Intrinsic.Control.EndIf
+''			
+''			f.Intrinsic.Control.If(v.Local.sCurrentSeq.Trim, =, "Closed", "AND", v.Local.sNextSeq.Trim, =, "Closed")
+''				v.Local.sRet.Set(" ")
+''				f.Intrinsic.String.Build("select * from Item_History where job = '{0}' and Code_Transaction = 'J52'", v.DataTable.jobSuffixDT(v.Local.iCnt).Job!FieldValTrim, v.Local.sSQL)
+''				f.ODBC.Connection!conSQL.OpenCompanyConnection
+''					f.ODBC.Connection!conSQL.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+''				f.ODBC.Connection!conSQL.Close
+''				f.Intrinsic.Control.If(v.Local.sRet.Trim, =, "")
+''					v.Local.sCurrentSeq.Set("WIP2FG")
+''				f.Intrinsic.Control.EndIf
+''				
+''				v.Local.sRet.Set(" ")
+''				f.Intrinsic.String.Build("select * from Job_Detail  where job = '{0}' and Seq = '999999'", v.DataTable.jobSuffixDT(v.Local.iCnt).Job!FieldValTrim, v.Local.sSQL)
+''				f.ODBC.Connection!conSQL.OpenCompanyConnection
+''					f.ODBC.Connection!conSQL.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+''				f.ODBC.Connection!conSQL.Close
+''				f.Intrinsic.Control.If(v.Local.sRet.Trim, <>, "")
+''					v.Local.sCurrentSeq.Set("Closed")
+''				f.Intrinsic.Control.EndIf
+''			f.Intrinsic.Control.EndIf			
+''			
+''			f.Data.Dictionary.AddItem("CurrentSeq", v.Local.sJobSuffixSequence, v.Local.sCurrentSeq)
+''			f.Data.Dictionary.AddItem("NextSeq", v.Local.sJobSuffixSequence, v.Local.sNextSeq)
+''			
+''		f.Intrinsic.Control.EndIf
+''	f.Intrinsic.Control.Next(v.Local.iCnt)
+''	
+''	f.Data.DataView.Close("jobOperationsDT", "jobOperationsDV")
+''	f.Data.DataTable.Close("jobOperationsDT")
+''	
+''	f.Data.DataView.Close("jobDetailDT", "jobSeqDV")
+''	f.Data.DataTable.Close("jobDetailDT")
+''	
+	f.Data.DataView.Close("openOrderdLinesDT", "openOrderdLinesDV")
+'	f.Data.DataTable.Close("jobSuffixDT")
+
+	f.Data.Dictionary.SetDefaultReturn("CurrentSeq", "")
+'	f.Data.DataTable.FillFromDictionary("jobDT", "CurrentSeq", "workOrderSuffix", "dicValue")
+'	f.Data.Dictionary.CreateFromDataTable("newCurrentSeq", "jobDT", "workOrderSuffix", "dicValue")
+	f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "CurrentSeq", "workOrderSuffix", "CurrentJobSeq")
+	f.Data.Dictionary.Close("CurrentSeq")
+'	f.Data.Dictionary.Close("newCurrentSeq")
+'	f.Data.DataTable.Close("jobDT")
+'	f.Data.Dictionary.SetDefaultReturn("NextSeq", "")
+'	f.Data.DataTable.FillFromDictionary("openOrderdLinesDT", "NextSeq", "workOrderSuffix", "NextJobSeq")
+'	f.Data.Dictionary.Close("NextSeq")
+f.Intrinsic.Control.Catch
+'	f.Intrinsic.Control.If(v.ODBC!con.State, =, 1)
+'		f.ODBC.Connection!conSQL.Close
+'	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.getSequences.End
+
+Program.Sub.cmdCalc_Click.Start
+f.Intrinsic.Control.Try
+
+	gui.F_JobHistory.progressBar1.Value(0)
+	gui.F_JobHistory.lblProgressBar.Caption("Getting Sequence Data:")
+	
+	gui.F_JobHistory.frmProgressBar.Enabled(True)
+	gui.F_JobHistory.frmProgressBar.Visible(True)
+	gui.F_JobHistory.frmFilterOptions.Enabled(False)
+	gui.F_JobHistory.frmFilterOptions.Visible(False)
+	gui.F_JobHistory.TabOpenOrders.Visible(False)
+	
+	f.Intrinsic.Control.CallSub(getSequences)
+	gui.F_JobHistory.progressBar1.Value(33)
+	gui.F_JobHistory.lblProgressBar.Caption("Calculating Days:")
+	f.Intrinsic.Control.CallSub(addDaysCalc)
+	gui.F_JobHistory.progressBar1.Value(66)
+	gui.F_JobHistory.lblProgressBar.Caption("Calculating Averages:")
+
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!TabOpenOrders.TabIndex, =, 0)
+		f.Intrinsic.Control.CallSub(calcAverageNew, passedDV, "allOrdersDV")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!TabOpenOrders.TabIndex, =, 1)
+		f.Intrinsic.Control.CallSub(calcAverageNew, passedDV, "openOrdersDV")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Screen.F_JobHistory!TabOpenOrders.TabIndex, =, 2)
+		f.Intrinsic.Control.CallSub(calcAverageNew, passedDV, "closedOrdersDV")
+	f.Intrinsic.Control.EndIf
+	
+	gui.F_JobHistory.progressBar1.Value(100)
+	gui.F_JobHistory.lblProgressBar.Caption("Complete")
+	gui.F_JobHistory.chkShowFormat.Enabled(True)
+	
+	gui.F_JobHistory.TabOpenOrders.Visible(True)
+	gui.F_JobHistory.frmProgressBar.Enabled(False)
+	gui.F_JobHistory.frmProgressBar.Visible(False)
+	gui.F_JobHistory.frmFilterOptions.Enabled(True)
+	gui.F_JobHistory.frmFilterOptions.Visible(True)
+	
+	'f.Intrinsic.UI.Msgbox("Done")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdCalc_Click.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$bpham$}$20210519112143047$}$Di0riF4Q5RIv6jxva5zSWDOOsXP37NsoctfUw8Jab7O773Xm5+m2P5W2FSRMkeBQVx4+9TW+Dw8=
+Program.Sub.Comments.End
